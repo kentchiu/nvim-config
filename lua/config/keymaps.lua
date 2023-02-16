@@ -12,14 +12,3 @@ vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go Right Up Window I
 
 -- Save file
 vim.keymap.set("n", "<C-s>", "<cmd>w<cr>", { noremap = true, desc = "Save window" })
-
--- Unmap mappings used by tmux plugin
--- TODO(vintharas): There's likely a better way to do this.
--- vim.keymap.del("n", "<C-h>")
--- vim.keymap.del("n", "<C-j>")
--- vim.keymap.del("n", "<C-k>")
--- vim.keymap.del("n", "<C-l>")
--- vim.keymap.set("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
--- vim.keymap.set("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>")
--- vim.keymap.set("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
--- vim.keymap.set("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
