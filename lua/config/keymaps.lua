@@ -2,7 +2,7 @@
 -- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
 -- Add any additional keymaps here
 
-vim.keymap.set("i", "jj", "<Esc>", { desc = "Escape" })
+vim.keymap.set("i", "jk", "<Esc>", { desc = "Escape" })
 
 -- To use CTRL+{h,j,k,l} to navigate windows from terminal in any mode
 vim.keymap.set("t", "<C-h>", "<C-\\><C-n><C-w>h", { desc = "Go To Left Window In Terminal" })
