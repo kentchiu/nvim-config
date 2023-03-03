@@ -3,10 +3,19 @@
 Powered by lazyvim
 
 
-## TODO
+## LSP server
 
-- Neo-tree: copy path (abstract, relate to project)
-- Neo-tree: copy file name
-- Editor: fold
-- Seamless jump betweens tumx panel and nvim window
 
+```
+  Installed
+    ◍ angular-language-server
+    ◍ css-lsp
+    ◍ docker-compose-language-service
+    ◍ dockerfile-language-server
+    ◍ html-lsp
+    ◍ json-lsp
+    ◍ lua-language-server
+    ◍ pyright
+    ◍ tailwindcss-language-server
+    ◍ typescript-language-server
+```
