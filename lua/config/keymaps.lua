@@ -10,9 +10,6 @@ vim.keymap.set("i", "jk", "<Esc>", { desc = "Escape" })
 -- vim.keymap.set("t", "<C-k>", "<C-\\><C-n><C-w>k", { desc = "Go Top Up Window In Terminal" })
 -- vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go Right Up Window In Terminal" })
 
--- Save file
--- vim.keymap.set("n", "<C-s>", "<cmd>wa<cr>", { noremap = true, desc = "Save window" })
-
 vim.keymap.set("n", "<leader>ut", "<cmd>TSPlaygroundToggle<cr>", { desc = "Toggle TreeSitter Playground" })
 
 -- vim.keymap.set("n", "<leader>sj", function()
