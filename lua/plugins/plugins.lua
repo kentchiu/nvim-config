@@ -1,3 +1,4 @@
+local Util = require("lazyvim.util")
 return {
   { "nvim-treesitter/playground" },
   { "chaoren/vim-wordmotion" },
@@ -39,7 +40,8 @@ return {
       -- change a keymap
       {
         "<leader>ss",
-        require("lazyvim.util").telescope("lsp_document_symbols", {}),
+        -- require("lazyvim.util").telescope("lsp_document_symbols", {}),
+        Util.telescope("lsp_document_symbols", {}),
         desc = "Goto Symbol",
       },
     },
