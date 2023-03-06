@@ -1,5 +1,7 @@
 local Util = require("lazyvim.util")
 return {
+  { "echasnovski/mini.pairs", enabled = false },
+  { "windwp/nvim-spectre", enabled = false },
   { "nvim-treesitter/playground" },
   { "chaoren/vim-wordmotion" },
   -- enabled git sign column

@@ -15,3 +15,6 @@ vim.keymap.set("n", "<leader>ut", "<cmd>TSPlaygroundToggle<cr>", { desc = "Toggl
 -- vim.keymap.set("n", "<leader>sj", function()
 --   require("telescope.builtin").jumplist()
 -- end, { desc = "Search Jump List" })
+
+-- c-v conflict with windows paste shortcut
+vim.keymap.set("n", "<leader>cc", "<c-v>", { desc = "Column Mode" })
