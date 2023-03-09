@@ -4,3 +4,5 @@
 -- vim.opt.autowriteall = true
 -- vim.opt.colorcolumn = "80"
 -- vim.opt.conceallevel = 0
+--
+vim.opt.swapfile = false
