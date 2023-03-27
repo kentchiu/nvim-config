@@ -24,12 +24,7 @@ Telescope: 可以使用 <Ctrl-]>
 ==============================================================================
 2. Translated help files				*kent.commands*
 
-function 1 ()
-end 
 
-
-      function 1 ()
-      end 
 
 
 ==============================================================================
@@ -46,6 +41,25 @@ a "tags" file in the same folder. Once the file has been generated, the
 command `:help kent` should work.
 
 Vim Doc syntax: |help-writing|
+
+
+code block   >
+
+  function xxx 
+  ddefe
+  endfunction
+
+<
+
+CTRL-X {lhs} {lhs}
+CTRL-X 
+
+- 標題：用 * 開頭和結尾的一行文字表示標題.
+- 段落：用空行分隔的一段連續文字表示一個段落，每段文字應不超過 80 個字元。
+- 清單：以 -、+、或 * 開頭的行表示清單項目。
+- 程式碼區塊：用 | 包住的詞彙或片語表示程式碼區塊.
+- 強調：用 _ 包住的詞彙或片語表示需要強調的內容.
+- 超連結：使用 | 包住的詞彙或片語表示超連結。
 
 
  vim:tw=78:ts=8:noet:ft=help:norl:
