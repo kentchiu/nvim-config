@@ -1,5 +1,5 @@
-help-writing	kent-nvim-notes.txt	/*help-writing*
 kent	kent-nvim-notes.txt	/*kent*
-kent-commands	kent-nvim-notes.txt	/*kent-commands*
-kent-keymaps	kent-nvim-notes.txt	/*kent-keymaps*
 kent-nvim-notes.txt	kent-nvim-notes.txt	/*kent-nvim-notes.txt*
+kent.commands	kent-nvim-notes.txt	/*kent.commands*
+kent.keymaps	kent-nvim-notes.txt	/*kent.keymaps*
+kent.misc	kent-nvim-notes.txt	/*kent.misc*

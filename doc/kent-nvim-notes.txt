@@ -9,23 +9,43 @@ Kent Nvim Tips					*kent*
                                       Type |gO| to see the table of contents.
 
 ==============================================================================
-1. Userful Keymaps					*kent-keymaps*
+1. Userful Keymaps					*kent.keymaps*
+
+大部分 <leader> 開頭的 keymaps 能觸發 |which-key.nvim.txt|  的 popup
+window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸發的,
+如果沒有經常在使用就會忘記了,所以, 這邊把一些有用, 但是容易被忽略的keymaps
+整理出來.
+
+
+Telescope: 可以使用 <Ctrl-]>
 
 
 
 ==============================================================================
-2. Translated help files				*kent-commands*
+2. Translated help files				*kent.commands*
+
+function 1 ()
+end 
+
+
+      function 1 ()
+      end 
+
 
 ==============================================================================
-3. Misc 						*kent-misc*
+3. Misc 						*kent.misc*
+
+如果這個 help file 在 NVIM 裡面變成 readonly , 可以用 `setlocal modifiable`
+讓它變成可以寫入
 
 
 To rebuild this document:
 
-Go to the "doc" folder and run the command `:helptags doc`. This will generate 
+Go to the "doc" folder and run the command `:helptags doc` . This will generate 
 a "tags" file in the same folder. Once the file has been generated, the 
 command `:help kent` should work.
 
-You can find more details in $VIMRUNTIME/syntax/help.vim.
+Vim Doc syntax: |help-writing|
+
 
  vim:tw=78:ts=8:noet:ft=help:norl:
