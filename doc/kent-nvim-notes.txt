@@ -19,7 +19,37 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 
 Telescope: 可以使用 <Ctrl-]>
 
+------------------------------------------------------------------------------
+Neo Test                                                
 
+from |neotest.setup()|
+
+>
+    summary = {
+      animated = true,
+      enabled = true,
+      expand_errors = true,
+      follow = true,
+      mappings = {
+        attach = "a",
+        clear_marked = "M",
+        clear_target = "T",
+        debug = "d",
+        debug_marked = "D",
+        expand = { "<CR>", "<2-LeftMouse>" },
+        expand_all = "e",
+        jumpto = "i",
+        mark = "m",
+        next_failed = "J",
+        output = "o",
+        prev_failed = "K",
+        run = "r",
+        run_marked = "R",
+        short = "O",
+        stop = "u",
+        target = "t"
+      },
+<
 
 ==============================================================================
 2. Translated help files				*kent.commands*

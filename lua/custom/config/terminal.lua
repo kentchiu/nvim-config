@@ -70,10 +70,10 @@ vim.api.nvim_set_keymap("n", "<leader>tT", "<cmd>exe v:count1 . 'ToggleTerm'<cr>
 
 vim.api.nvim_set_keymap("n", "<leader>tr", "<cmd>ToggleTermSendCurrentLine<cr>", { noremap = true, silent = true, desc = "Run Current Line" })
 vim.api.nvim_set_keymap("v", "<leader>tr", "<cmd>ToggleTermSendCurrentLine<cr>", { noremap = true, silent = true, desc = "Run Current Line" })
- 
-vim.api.nvim_set_keymap("n", "<c-r>", "y<cmd>ToggleTermSendVisualSelection<cr>", { noremap = true, silent = true, desc = "Run Selection" })
-vim.api.nvim_set_keymap("v", "<c-r>", "y<cmd>ToggleTermSendVisualSelection<cr>", { noremap = true, silent = true, desc = "Run Selection" })
 
+-- vim.api.nvim_set_keymap("n", "<leader>tv", "y<cmd>ToggleTermSendVisualSelection<cr>", { noremap = true, silent = true, desc = "Run Visual Selection" })
+vim.api.nvim_set_keymap("v", "<leader>tv", "y<cmd>ToggleTermSendVisualSelection<cr>", { noremap = true, silent = true, desc = "Run Visual Selection" })
+--
 -- lazy git
 vim.api.nvim_set_keymap("n", "<leader>gg", "<cmd>lua lazygit_toggle()<cr>",
   { noremap = true, silent = true, desc = "lazygit" })

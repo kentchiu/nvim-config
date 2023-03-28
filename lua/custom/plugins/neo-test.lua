@@ -6,8 +6,20 @@ return {
     "antoinemadec/FixCursorHold.nvim",
     "nvim-neotest/neotest-python",
   },
+  keys = {
+    { "<leader>ts", function() require("neotest").summary.toggle() end,              desc = "Toggle Test Summary" },
+    { "<leader>tm", function() require("neotest").run.run() end,                     desc = "Run Current File Test" },
+    { "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end,   desc = "Toggle Test Summary" },
+    { "<leader>ta", function() require("neotest").run.run(vim.fn.getcwd()) end,      desc = "Run All Tests" },
+    { "<leader>to", function() require("neotest").output.open({ enter = true }) end, desc = "Output of test results" },
+    { "<leader>tp", function() require("neotest").output_panel.toggle() end,         desc = "Output terminal" },
+  },
   config = function()
     require("neotest").setup({
+      quickfix = {
+        enabled = false,
+        open = false
+      },
       adapters = {
 
         require("neotest-python")({
@@ -17,6 +29,7 @@ return {
           -- Command line arguments for runner
           -- Can also be a function to return dynamic values
           -- args = { "--log-level", "DEBUG" },
+          args = { "-vv", "-s" },
           -- Runner to use. Will use pytest if available by default.
           -- Can be a function to return dynamic value.
           runner = "pytest",
