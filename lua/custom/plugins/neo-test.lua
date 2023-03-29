@@ -8,8 +8,8 @@ return {
   },
   keys = {
     { "<leader>ts", function() require("neotest").summary.toggle() end,              desc = "Toggle Test Summary" },
-    { "<leader>tm", function() require("neotest").run.run() end,                     desc = "Run Current File Test" },
-    { "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end,   desc = "Toggle Test Summary" },
+    { "<leader>tm", function() require("neotest").run.run() end,                     desc = "Test Current Method" },
+    { "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end,   desc = "Test Current File" },
     { "<leader>ta", function() require("neotest").run.run(vim.fn.getcwd()) end,      desc = "Run All Tests" },
     { "<leader>to", function() require("neotest").output.open({ enter = true }) end, desc = "Output of test results" },
     { "<leader>tp", function() require("neotest").output_panel.toggle() end,         desc = "Output terminal" },

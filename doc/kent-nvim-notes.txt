@@ -17,10 +17,22 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 整理出來.
 
 
-Telescope: 可以使用 <Ctrl-]>
+
+- `gw`: Search word under cursor
+- `ya`: Yank all in braces   
+- `CTRL-<SPACE>` in vmode : Expand selection.
 
 ------------------------------------------------------------------------------
-Neo Test                                                
+				                       *kent.keymaps.telescope*
+
+- CTRL-/ :  Show mappings for picker actions (insert mode)
+- `?` : Show mappings for picker actions (normal mode)  
+- CTRL-q : Send all items not filtered to quickfixlist (qflist)
+- ALT-q : Send all selected items to qflist 
+- <ESC> or CTRL-[ : Enter normal mode
+
+------------------------------------------------------------------------------
+
 
 from |neotest.setup()|
 
@@ -57,13 +69,32 @@ from |neotest.setup()|
 
 
 ==============================================================================
-2. Tmux	                         			*kent.tmux*
+3. Tmux	                         			*kent.tmux*
 
 - `<lader> + ?` : List all key mappings
 - `<lader> + z` : Maximum curren pane
 
+
+
 ==============================================================================
-3. Misc 						*kent.misc*
+4. MISC	                         			*kent.misc*
+
+Text Object 裡面的 `word` 跟 `WORD` 的差別:
+
+A word is... an almost C-style variable name.
+
+– A consecutive string of characters containing only of letters, digits and 
+  underscores.
+– Can be modified through the 'iskeyword' option, if you are working with a 
+  language that has slightly different specification of variable names!
+– They are meant to indicate variable name and values!
+
+A WORD is... what unix standard thinks is a word.
+
+- A sequence of characters delimited by any kind of whitespace characters.
+
+==============================================================================
+5. Help 						*kent.help*
 
 如果這個 help file 在 NVIM 裡面變成 readonly , 可以用 `setlocal modifiable`
 讓它變成可以寫入
@@ -85,9 +116,8 @@ code block   >
   endfunction
 
 <
-
-CTRL-X {lhs} {lhs}
-CTRL-X 
+------------------------------------------------------------------------------
+						  *kent.help.help-syntax*
 
 - 標題：用 * 開頭和結尾的一行文字表示標題.
 - 段落：用空行分隔的一段連續文字表示一個段落，每段文字應不超過 80 個字元。
@@ -96,5 +126,6 @@ CTRL-X
 - 強調：用 _ 包住的詞彙或片語表示需要強調的內容.
 - 超連結：使用 | 包住的詞彙或片語表示超連結。
 
+cheatsheet: https://devhints.io/vim-help
 
  vim:tw=78:ts=8:noet:ft=help:norl:

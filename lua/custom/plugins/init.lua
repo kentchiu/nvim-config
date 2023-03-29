@@ -48,6 +48,20 @@ return {
       wk.register(keymaps)
     end,
   },
+
+--[[
+local sections = {
+  f = { name = "󰍉 Find" },
+  p = { name = "󰏖 Packages" },
+  l = { name = " LSP" },
+  u = { name = " UI" },
+  b = { name = "󰓩 Buffers" },
+  d = { name = " Debugger" },
+  g = { name = " Git" },
+  S = { name = "󱂬 Session" },
+  t = { name = " Terminal" },
+}
+]]
   {
     "folke/trouble.nvim",
     cmd = { "TroubleToggle", "Trouble" },

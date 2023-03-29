@@ -45,6 +45,16 @@ return {
       { "<leader>sC", "<cmd>Telescope commands<cr>",                  desc = "Commands" },
       { "<leader>sE", "<cmd>Telescope symbols<cr>",                   desc = "Emoji" },
       { "<leader>sg", require("telescope.builtin").live_grep, desc = "Find in Files (Grep)" },
+--[[
+  maps.n["<leader>fW"] = {
+    function()
+      require("telescope.builtin").live_grep {
+        additional_args = function(args) return vim.list_extend(args, { "--hidden", "--no-ignore" }) end,
+      }
+    end,
+    desc = "Find words in all files",
+  }
+      ]]
       { "<leader>sh", "<cmd>Telescope help_tags<cr>", desc = "Help Pages" },
       { "<leader>sH", "<cmd>Telescope highlights<cr>", desc = "Search Highlight Groups" },
       { "<leader>sj", "<cmd>Telescope jumplist<cr>",  desc = "Jump List" },
@@ -56,6 +66,8 @@ return {
       { "<leader>sq", "<cmd>Telescope quickfix<cr>",            desc = "Quickfix" },
       { "<leader>sQ", "<cmd>Telescope quickfixhistory<cr>",     desc = "Quickfix History" },
       { "<leader>ss", "<cmd>Telescope resume<cr>",              desc = "Resume" },
+      { "<leader>s<CR>", function() require("telescope.builtin").resume() end,              desc = "Resume previous search" },
+  -- maps.n["<leader>f<CR>"] = { function() require("telescope.builtin").resume() end, desc = "Resume previous search" }
       { "<leader>st", "<cmd>Telescope treesitter<cr>",          desc = "Treesitter" },
       { "<leader>sw", require("telescope.builtin").grep_string, desc = "Word" },
       { "<leader>sx", require("telescope.builtin").diagnostics, desc = "Diagnostics" },
