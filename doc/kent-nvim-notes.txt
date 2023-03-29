@@ -52,10 +52,15 @@ from |neotest.setup()|
 <
 
 ==============================================================================
-2. Translated help files				*kent.commands*
+2. Commands	                 			*kent.commands*
 
 
 
+==============================================================================
+2. Tmux	                         			*kent.tmux*
+
+- `<lader> + ?` : List all key mappings
+- `<lader> + z` : Maximum curren pane
 
 ==============================================================================
 3. Misc 						*kent.misc*
