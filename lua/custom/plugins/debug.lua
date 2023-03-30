@@ -91,7 +91,7 @@ return {
     dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
     -- Install golang specific config
-    require('dap-python').setup('/home/kent/dev/kent/stock/api/.venv/bin/python')
+    require('dap-python').setup('./.venv/bin/python')
     require('dap-python').test_runner = 'pytest'
   end,
 }
