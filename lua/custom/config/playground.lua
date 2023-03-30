@@ -7,70 +7,28 @@ vim.keymap.set("n", "<leader>pp", "<cmd>source ~/.config/nvim/lua/custom/config/
 
 -- print("Playground is sourced")
 
--- local M = {}
---
--- function M.edit_neovim()
+vim.keymap.set("n", "<C-d>", "<C-d>zz", {  desc = "Scroll window Downwards And Center It" });
+vim.keymap.set("n", "<C-u>", "<C-u>zz", {  desc = "Scroll window Upwards And Center It" });
+
+      -- git
+      --       --[[
+      -- -- GitSigns
+      -- if is_available "gitsigns.nvim" then
+      --   maps.n["<leader>g"] = sections.g
+      --   maps.n["]g"] = { function() require("gitsigns").next_hunk() end, desc = "Next Git hunk" }
+      --   maps.n["[g"] = { function() require("gitsigns").prev_hunk() end, desc = "Previous Git hunk" }
+      --   maps.n["<leader>gl"] = { function() require("gitsigns").blame_line() end, desc = "View Git blame" }
+      --   maps.n["<leader>gp"] = { function() require("gitsigns").preview_hunk() end, desc = "Preview Git hunk" }
+      --   maps.n["<leader>gh"] = { function() require("gitsigns").reset_hunk() end, desc = "Reset Git hunk" }
+      --   maps.n["<leader>gr"] = { function() require("gitsigns").reset_buffer() end, desc = "Reset Git buffer" }
+      --   maps.n["<leader>gs"] = { function() require("gitsigns").stage_hunk() end, desc = "Stage Git hunk" }
+      --   maps.n["<leader>gS"] = { function() require("gitsigns").stage_buffer() end, desc = "Stage Git buffer" }
+      --   maps.n["<leader>gu"] = { function() require("gitsigns").undo_stage_hunk() end, desc = "Unstage Git hunk" }
+      --   maps.n["<leader>gd"] = { function() require("gitsigns").diffthis() end, desc = "View Git diff" }
+      -- end
+      -- ]]
 
 
-
--- require("telescope.builtin").git_files({
---   scroll_strategy = "cycle",
---   -- layout_config = {
---   --   height = 0.3,
---   --   preview_cutoff = 40,
---   --   prompt_position = "top",
---   --   width = 0.5
---   -- },
---   winblend = 10,
---   path_display = {
---     shorten = { len = 1, exclude = { 1, -1 } },
---   },
---   shorten_path = true,
---   cwd = "~/dev/kent/notes",
---   prompt = "~ dotfiles ~",
---   border = true,
---   dynamic_preview_title = true,
---   -- results_title = "xxx",
---   preview = false,
--- })
---
---
--- require("telescope.builtin").live_grep({
---    prompt_title = "find string in open buffers...",
---    grep_open_files = true
---  })
--- require("telescope.builtin").find_files(require("telescope.themes").get_dropdown{
---     previewer = false
---   })
-
--- require("telescope.builtin").live_grep({
---   disable_coordinates = true
--- })
-
--- local telescope = require("telescope")
--- local lga_actions = require("telescope-live-grep-args.actions")
---
--- telescope.setup {
---   extensions = {
---     live_grep_args = {
---       auto_quoting = true, -- enable/disable auto-quoting
---       -- define mappings, e.g.
---       mappings = { -- extend mappings
---         i = {
---           ["<C-k>"] = lga_actions.quote_prompt(),
---           ["<C-i>"] = lga_actions.quote_prompt({ postfix = " --iglob " }),
---         },
---       },
---       -- ... also accepts theme settings, for example:
---       -- theme = "dropdown", -- use dropdown theme
---       -- theme = { }, -- use own theme spec
---       -- layout_config = { mirror=true }, -- mirror preview pane
---     }
---   }
--- }
-
-
--- require("telescope.builtin").treesitter()
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et

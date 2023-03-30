@@ -77,14 +77,6 @@ vim.keymap.set("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy" })
 -- new file
 vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 
-vim.keymap.set("n", "<leader>xl", "<cmd>lopen<cr>", { desc = "Location List" })
-vim.keymap.set("n", "<leader>xq", "<cmd>copen<cr>", { desc = "Quickfix List" })
-
--- if not Util.has("trouble.nvim") then
---   map("n", "[q", vim.cmd.cprev, { desc = "Previous quickfix" })
---   map("n", "]q", vim.cmd.cnext, { desc = "Next quickfix" })
--- end
-
 -- toggle options
 --
 -- map("n", "<leader>uf", require("lazyvim.plugins.lsp.format").toggle, { desc = "Toggle format on Save" })
@@ -147,33 +139,8 @@ vim.keymap.set({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
 -- quit
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 
--- create folder
+-- create fold
 vim.keymap.set("n", "m", "zf%", { desc = "Create Fold", remap = true })
-
--- neo-test
--- vim.keymap.set("n", "<leader>tm", function() require("neotest").run.run() end, { desc = "Run Current Menthod Test" })
--- vim.keymap.set("n", "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end, { desc = "Run Current File Test" })
--- vim.keymap.set("n", "<leader>ta", function() require("neotest").run.run(vim.fn.getcwd()) end, { desc = "Run All Tests" })
--- vim.keymap.set("n", "<leader>ts", function() require("neotest").summary.toggle() end, { desc = "Toggle Test Summary" })
-
-
--- git 
---[[
--- GitSigns
-if is_available "gitsigns.nvim" then
-  maps.n["<leader>g"] = sections.g
-  maps.n["]g"] = { function() require("gitsigns").next_hunk() end, desc = "Next Git hunk" }
-  maps.n["[g"] = { function() require("gitsigns").prev_hunk() end, desc = "Previous Git hunk" }
-  maps.n["<leader>gl"] = { function() require("gitsigns").blame_line() end, desc = "View Git blame" }
-  maps.n["<leader>gp"] = { function() require("gitsigns").preview_hunk() end, desc = "Preview Git hunk" }
-  maps.n["<leader>gh"] = { function() require("gitsigns").reset_hunk() end, desc = "Reset Git hunk" }
-  maps.n["<leader>gr"] = { function() require("gitsigns").reset_buffer() end, desc = "Reset Git buffer" }
-  maps.n["<leader>gs"] = { function() require("gitsigns").stage_hunk() end, desc = "Stage Git hunk" }
-  maps.n["<leader>gS"] = { function() require("gitsigns").stage_buffer() end, desc = "Stage Git buffer" }
-  maps.n["<leader>gu"] = { function() require("gitsigns").undo_stage_hunk() end, desc = "Unstage Git hunk" }
-  maps.n["<leader>gd"] = { function() require("gitsigns").diffthis() end, desc = "View Git diff" }
-end
-]]
 
 
 
