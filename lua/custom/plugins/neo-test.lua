@@ -7,6 +7,7 @@ return {
     "nvim-neotest/neotest-python",
   },
   keys = {
+    { "<leader>;", function() require("neotest").run.run() end,                     desc = "Test Current Method" },
     { "<leader>ts", function() require("neotest").summary.toggle() end,              desc = "Toggle Test Summary" },
     { "<leader>tm", function() require("neotest").run.run() end,                     desc = "Test Current Method" },
     { "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end,   desc = "Test Current File" },

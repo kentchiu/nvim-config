@@ -21,6 +21,8 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 - `gw`: Search word under cursor
 - `ya`: Yank all in braces   
 - `CTRL-<SPACE>` in vmode : Expand selection.
+- `K`: lsp hover
+- <leader>ck: lsp signature help
 
 ------------------------------------------------------------------------------
 				                       *kent.keymaps.telescope*
