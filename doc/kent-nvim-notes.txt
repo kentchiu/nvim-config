@@ -24,8 +24,16 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 - `K`: lsp hover
 - <leader>ck: lsp signature help
 
+							  
+		                       *kent.keymaps.copy-to-commandline*
+
+1. `gw` or `*` to mark word on cursor
+2. `:` to command-line mode
+3. Press CTRL-r" to paste from default register
+
+
 ------------------------------------------------------------------------------
-				                       *kent.keymaps.telescope*
+			                         *kent.keymaps.telescope*
 
 - CTRL-/ :  Show mappings for picker actions (insert mode)
 - `?` : Show mappings for picker actions (normal mode)  
