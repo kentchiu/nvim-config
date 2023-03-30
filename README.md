@@ -4,7 +4,9 @@ Config neovim as PDE (Persnoal IDE)
 
 ## TODO
 
-- [] TODO machanizie in trouble.nvim (check <leader x> and <leader>st in lazyvim)
+- [] add lsp info to <leader> ul
+- [] move Lazy from <leader>l to <leader>uL
+- [] TODO machanizie in trouble.nvim (check <leader <x> and <leader>st in lazyvim)
 - [] ut -> toogle options like lazyvim
 - [] remove buffer use :bdelete command in telescope buffers view
 - [] Find recent file only under current folder
