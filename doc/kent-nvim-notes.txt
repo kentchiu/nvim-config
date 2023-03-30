@@ -34,7 +34,14 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 - <ESC> or CTRL-[ : Enter normal mode
 
 ------------------------------------------------------------------------------
+				                       *kent.keymaps.debug*
 
+- <F1>: step into 
+- <F2>: step over
+- <F3>: step out
+
+------------------------------------------------------------------------------
+				                       *kent.keymaps.neotest*
 
 from |neotest.setup()|
 

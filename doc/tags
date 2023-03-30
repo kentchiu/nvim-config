@@ -1,7 +1,11 @@
 kent	kent-nvim-notes.txt	/*kent*
 kent-nvim-notes.txt	kent-nvim-notes.txt	/*kent-nvim-notes.txt*
 kent.commands	kent-nvim-notes.txt	/*kent.commands*
+kent.help	kent-nvim-notes.txt	/*kent.help*
+kent.help.help-syntax	kent-nvim-notes.txt	/*kent.help.help-syntax*
 kent.keymaps	kent-nvim-notes.txt	/*kent.keymaps*
+kent.keymaps.debug	kent-nvim-notes.txt	/*kent.keymaps.debug*
+kent.keymaps.neotest	kent-nvim-notes.txt	/*kent.keymaps.neotest*
 kent.keymaps.telescope	kent-nvim-notes.txt	/*kent.keymaps.telescope*
 kent.misc	kent-nvim-notes.txt	/*kent.misc*
 kent.tmux	kent-nvim-notes.txt	/*kent.tmux*
