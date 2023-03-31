@@ -120,9 +120,20 @@ require("lazy").setup({
     },
   },
   -- "gc" to comment visual regions/lines
-  { "numToStr/Comment.nvim",         opts = {} },
+  { 'JoosepAlviste/nvim-ts-context-commentstring' },
+  {
+    'numToStr/Comment.nvim',
+    dependencies = {
+      'JoosepAlviste/nvim-ts-context-commentstring',
+    },
+    opts = function()
+      return {
+        pre_hook = require('ts_context_commentstring.integrations.comment_nvim').create_pre_hook(),
+      }
+    end,
+  },
   -- Fuzzy Finder (files, lsp, etc)
-  { "nvim-telescope/telescope.nvim", version = "*", dependencies = { "nvim-lua/plenary.nvim" } },
+  { "nvim-telescope/telescope.nvim",              version = "*", dependencies = { "nvim-lua/plenary.nvim" } },
   -- Fuzzy Finder Algorithm which requires local dependencies to be built.
   -- Only load if `make` is available. Make sure you have the system
   -- requirements installed.
@@ -140,6 +151,7 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     dependencies = {
       "nvim-treesitter/nvim-treesitter-textobjects",
+
     },
     config = function()
       pcall(require("nvim-treesitter.install").update { with_sync = true })
@@ -294,6 +306,11 @@ require("nvim-treesitter.configs").setup {
         ["<leader>A"] = "@parameter.inner",
       },
     },
+    -- config for nvim-ts-context-commentstring
+    context_commentstring = {
+      enable = true,
+      enable_autocmd = false,
+    }
   },
 }
 
