@@ -198,9 +198,9 @@ return {
           },
           {
             'filename',
-            file_status = true, -- Displays file status (readonly status, modified status)
+            file_status = true,    -- Displays file status (readonly status, modified status)
             newfile_status = true, -- Display new file status (new file means no write after created)
-            path = 1,         -- 0: Just the filename
+            path = 1,              -- 0: Just the filename
             -- 1: Relative path
             -- 2: Absolute path
             -- 3: Absolute path, with tilde as the home directory
@@ -208,8 +208,8 @@ return {
             shorting_target = 40, -- Shortens path to leave 40 spaces in the window
             -- for other components. (terrible name, any suggestions?)
             symbols = {
-              modified = ' ❗❗❗',     -- Text to show when the buffer is modified
-              readonly = ' 🔒',      -- Text to show when the file is non-modifiable or readonly.
+              modified = ' ❗❗❗', -- Text to show when the buffer is modified
+              readonly = ' 🔒',    -- Text to show when the file is non-modifiable or readonly.
               unnamed = '[No Name]', -- Text to show for unnamed buffers.
               newfile = '[New]',
             },
@@ -220,5 +220,19 @@ return {
   },
   {
     "nvim-treesitter/playground"
+  },
+  {
+    "windwp/nvim-autopairs",
+    opts = {
+      fast_wrap = {},
+      disable_filetype = { "TelescopePrompt", "vim" },
+    },
+    config = function(_, opts)
+      require("nvim-autopairs").setup(opts)
+
+      -- setup cmp for autopairs
+      local cmp_autopairs = require "nvim-autopairs.completion.cmp"
+      require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
+    end,
   },
 }
