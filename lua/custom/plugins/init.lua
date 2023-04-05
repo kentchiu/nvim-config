@@ -235,4 +235,24 @@ return {
       require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
   },
+  {
+    "jose-elias-alvarez/null-ls.nvim",
+    event = { "BufReadPre", "BufNewFile" },
+    dependencies = { "mason.nvim" },
+    opts = function()
+      local nls = require("null-ls")
+      return {
+        debug = true,
+        sources = {
+          nls.builtins.formatting.stylua,
+          nls.builtins.formatting.shfmt,
+          nls.builtins.diagnostics.flake8,
+          nls.builtins.formatting.prettier,
+          nls.builtins.formatting.black,
+          -- nls.builtins.formatting.eslint_d,
+          -- nls.builtins.diagnostics.eslint_d,
+        },
+      }
+    end,
+  },
 }

@@ -23,7 +23,8 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 - `CTRL-<SPACE>` in vmode : Expand selection.
 - `K`: lsp hover
 - <leader>ck: lsp signature help
- 
+- gp: paste without lose info (quick replace)
+- g;: run current method
 
 comment: https://github.com/numToStr/Comment.nvim
 
@@ -99,8 +100,43 @@ from |neotest.setup()|
       },
 <
 
+>
+------------------------------------------------------------------------------
+				                       *kent.keymaps.trouble*
+>
+   action_keys = { -- key mappings for actions in the trouble list
+        -- map to {} to remove a mapping, for example:
+        -- close = {},
+        close = "q", -- close the list
+        cancel = "<esc>", -- cancel the preview and get back to your last window / buffer / cursor
+        refresh = "r", -- manually refresh
+        jump = {"<cr>", "<tab>"}, -- jump to the diagnostic or open / close folds
+        open_split = { "<c-x>" }, -- open buffer in new split
+        open_vsplit = { "<c-v>" }, -- open buffer in new vsplit
+        open_tab = { "<c-t>" }, -- open buffer in new tab
+        jump_close = {"o"}, -- jump to the diagnostic and close the list
+        toggle_mode = "m", -- toggle between "workspace" and "document" diagnostics mode
+        toggle_preview = "P", -- toggle auto_preview
+        hover = "K", -- opens a small popup with the full multiline message
+        preview = "p", -- preview the diagnostic location
+        close_folds = {"zM", "zm"}, -- close all folds
+        open_folds = {"zR", "zr"}, -- open all folds
+        toggle_fold = {"zA", "za"}, -- toggle fold of current file
+        previous = "k", -- previous item
+        next = "j" -- next item
+    },
+<
+
+
 ==============================================================================
 2. Commands	                 			*kent.commands*
+
+
+查詢目前 buffer 的 LSP 有支援哪些功能
+>
+    :lua print(vim.inspect(vim.lsp.buf_get_clients()[1].resolved_capabilities)).
+<
+
 
 
 

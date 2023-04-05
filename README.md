@@ -4,6 +4,9 @@ Config neovim as PDE (Persnoal IDE)
 
 ## TODO
 
+- [] toggle diagnostics (`:lua vim.diagnostics.disable()`)
+- [] cmp popup windows max and min size
+- [] cmp window popup with frame (code complete and `K` info)
 - [] add lsp info to <leader> ul
 - [] move Lazy from <leader>l to <leader>uL
 - [] TODO machanizie in trouble.nvim (check <leader <x> and <leader>st in lazyvim)
@@ -18,7 +21,7 @@ Config neovim as PDE (Persnoal IDE)
 - [x] File changes history (Lazy Git or Telescope)
 - [x] Insert mode by default in terminal
 - [x] slient exit terminal
-- [] telescope filter by file type
+- [x] ~telescope filter by file type~
 - [x] auto-save
 - [x] telescope grep_string
 - [x] command history
@@ -31,3 +34,6 @@ Config neovim as PDE (Persnoal IDE)
 - [x] search highlight (/)
 - [x] jk not map to esc
 - [x] project scope diagnostics
+
+
+
