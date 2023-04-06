@@ -29,6 +29,7 @@ vim.api.nvim_set_keymap('n', 'gp', 'viw"0p', {noremap = true, silent = true})
 -- end
 -- ]]
 
+vim.keymap.set("n", "<leader>gd",  function() require("gitsigns").diffthis() end, {desc = "View Git diff" }) 
 
 
 -- The line beneath this is called `modeline`. See `:help modeline`
