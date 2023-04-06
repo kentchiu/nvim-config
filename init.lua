@@ -505,6 +505,7 @@ cmp.setup({
 	},
 	formatting = {
 		format = function(entry, vim_item)
+			print(vim_item)
 			-- -- Kind icons
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			-- Source
@@ -514,6 +515,22 @@ cmp.setup({
 				buffer = "[Buffer]",
 				path = "[Path]",
 			})[entry.source.name]
+			-- return vim_item
+
+			-- max pop window width limitation
+			local ELLIPSIS_CHAR = "…"
+			local MAX_LABEL_WIDTH = 50
+
+			local get_ws = function(max, len)
+				return (" "):rep(max - len)
+			end
+
+			local content = vim_item.abbr
+			if #content > MAX_LABEL_WIDTH then
+				vim_item.abbr = vim.fn.strcharpart(content, 0, MAX_LABEL_WIDTH) .. ELLIPSIS_CHAR
+			else
+				vim_item.abbr = content .. get_ws(MAX_LABEL_WIDTH, #content)
+			end
 			return vim_item
 		end,
 	},
@@ -521,9 +538,6 @@ cmp.setup({
 		completion = {
 			border = "single",
 			max_menu_width = 100,
-			-- winhighlight = "Normal:Pmenu,FloatBorder:Pmenu,Search:None",
-			-- col_offset = -3,
-			-- side_padding = 0,
 		},
 		documentation = {
 			border = "single",

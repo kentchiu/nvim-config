@@ -10,7 +10,8 @@ vim.keymap.set("n", "<leader>pp", "<cmd>source ~/.config/nvim/lua/custom/config/
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll window Downwards And Center It" });
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll window Upwards And Center It" });
 -- vim.keymap.set("n", "gp", '`viw"0p', { expr = true, silent = true, desc = "Paste From Register 0" });
-vim.api.nvim_set_keymap('n', 'gp', 'viw"0p', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("n", "gp", 'viw"0p', {noremap = true, silent = true})
+vim.api.nvim_set_keymap("v", "gp", 'viw"0p', {noremap = true, silent = true})
 -- git
 --       --[[
 -- -- GitSigns
