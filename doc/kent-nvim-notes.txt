@@ -26,6 +26,9 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 - gp: paste without lose info (quick replace)
 - g;: run current method
 
+------------------------------------------------------------------------------
+			                         *kent.keymaps.comment*
+
 comment: https://github.com/numToStr/Comment.nvim
 
 
@@ -46,14 +49,14 @@ comment: https://github.com/numToStr/Comment.nvim
 
 
 
-		                       *kent.keymaps.copy-to-commandline*
+		                    *kent.keymaps.copy-to-commandline*
 
 1. `gw` or `*` to mark word on cursor
 2. `:` to command-line mode
 3. Press CTRL-r" to paste from default register
 
 ------------------------------------------------------------------------------
-			                         *kent.keymaps.telescope*
+			                        *kent.keymaps.telescope*
 
 - CTRL-/ :  Show mappings for picker actions (insert mode)
 - `?` : Show mappings for picker actions (normal mode)  
@@ -62,14 +65,14 @@ comment: https://github.com/numToStr/Comment.nvim
 - <ESC> or CTRL-[ : Enter normal mode
 
 ------------------------------------------------------------------------------
-				                       *kent.keymaps.debug*
+				                   *kent.keymaps.debug*
 
 - <F1>: step into 
 - <F2>: step over
 - <F3>: step out
 
 ------------------------------------------------------------------------------
-				                       *kent.keymaps.neotest*
+				                 *kent.keymaps.neotest*
 
 from |neotest.setup()|
 
@@ -102,7 +105,7 @@ from |neotest.setup()|
 
 >
 ------------------------------------------------------------------------------
-				                       *kent.keymaps.trouble*
+				                 *kent.keymaps.trouble*
 >
    action_keys = { -- key mappings for actions in the trouble list
         -- map to {} to remove a mapping, for example:
@@ -136,12 +139,15 @@ from |neotest.setup()|
 >
     :lua print(vim.inspect(vim.lsp.buf_get_clients()[1].resolved_capabilities)).
 <
+開啟/關閉 diagnostic
 
-
-
+>
+    :lua vim.lsp.diagnostic.enable()
+    :lua vim.lsp.diagnostic.disable()
+<
 
 ==============================================================================
-3. Tmux	                         			*kent.tmux*
+3. Tmux				      			*kent.tmux*
 
 - `<lader> + ?` : List all key mappings
 - `<lader> + z` : Maximum curren pane
@@ -189,7 +195,7 @@ code block   >
 
 <
 ------------------------------------------------------------------------------
-						  *kent.help.help-syntax*
+			         		  *kent.help.help-syntax*
 
 - 標題：用 * 開頭和結尾的一行文字表示標題.
 - 段落：用空行分隔的一段連續文字表示一個段落，每段文字應不超過 80 個字元。
