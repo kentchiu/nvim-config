@@ -133,6 +133,7 @@ vim.keymap.set("n", "<leader>cc", "<c-v>", { desc = "Column Mode" })
 
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
+
 -- Search word under cursor
 vim.keymap.set({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
 
@@ -142,5 +143,22 @@ vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 -- create fold
 vim.keymap.set("n", "m", "zf%", { desc = "Create Fold", remap = true })
 
+-- make page forward/backwoard firendly
+vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll window Downwards And Center It" });
+vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll window Upwards And Center It" });
 
+-- Paste without losing data in register
+vim.api.nvim_set_keymap("n", "gp", 'viw"0p', {noremap = true, silent = true, desc="Quick Paste"})
+vim.api.nvim_set_keymap("v", "gp", 'viw"0p', {noremap = true, silent = true, desc="Quick Paste"})
+
+-- GitSigns
+vim.keymap.set("n", "<leader>gd",  function() require("gitsigns").diffthis() end, {desc = "View Git diff" }) 
+
+-- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
+vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
+  vim.lsp.handlers.hover, { border = "rounded", })
+
+vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
+  vim.lsp.handlers.signature_help, { border = "rounded" }
+)
 
