@@ -73,7 +73,7 @@ ls.add_snippets("html", {
     t("</form>")
   }),
   s("field", fmt([[
-  <input [ngClass]="{ 'is-invalid': submitted && f.^name$.errors }" class="form-control" formControlName="^name$" type="text" />
+  <input [ngClass]="{ 'is-invalid': submitted && f.^name$.errors }" class="form-control" formControlName="^name$" type="text" inputRef noWhitespace />
   <div *ngIf="submitted && f.^name$.errors" class="invalid-feedback">
     <div *ngIf="f.^name$.errors.required" i18n="@@idevice.validations.required">必填</div>
     <div *ngIf="f.^name$.errors.min">最小值為1</div>
