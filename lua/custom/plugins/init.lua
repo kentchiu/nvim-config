@@ -175,7 +175,6 @@ return {
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
   },
-  { "Pocco81/auto-save.nvim",               enabled = false },
   { "nvim-telescope/telescope-symbols.nvim" },
   {
     -- Set lualine as statusline

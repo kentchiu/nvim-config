@@ -193,7 +193,6 @@ require("nvim-treesitter.configs").setup({
 		"diff",
 		"dockerfile",
 		"dot",
-		"help",
 		"html",
 		"http",
 		"javascript",
@@ -213,6 +212,7 @@ require("nvim-treesitter.configs").setup({
 		"tsx",
 		"typescript",
 		"vim",
+		"vimdoc",
 		"yaml",
 	},
 	-- Autoinstall languages that are not installed. Defaults to false (but you can change for yourself!)

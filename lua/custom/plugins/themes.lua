@@ -2,16 +2,16 @@ return {
   {
     "navarasu/onedark.nvim",
     -- priority = 1000,
-    -- config = function()
-    --   vim.cmd.colorscheme "onedark"
-    -- end,
+    config = function()
+      vim.cmd.colorscheme "onedark"
+    end,
   },
   {
     "folke/tokyonight.nvim",
     priority = 1000,
-    config = function()
-      vim.cmd.colorscheme "tokyonight"
-    end,
+    -- config = function()
+    --   vim.cmd.colorscheme "tokyonight"
+    -- end,
   },
   {
     "Mofiqul/dracula.nvim",
