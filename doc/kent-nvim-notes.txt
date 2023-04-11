@@ -76,7 +76,7 @@ comment: https://github.com/numToStr/Comment.nvim
 
 from |neotest.setup()|
 
->
+>lua
     summary = {
       animated = true,
       enabled = true,
@@ -101,12 +101,11 @@ from |neotest.setup()|
         stop = "u",
         target = "t"
       },
-<
 
->
+
 ------------------------------------------------------------------------------
 				                 *kent.keymaps.trouble*
->
+>lua
    action_keys = { -- key mappings for actions in the trouble list
         -- map to {} to remove a mapping, for example:
         -- close = {},
@@ -128,23 +127,20 @@ from |neotest.setup()|
         previous = "k", -- previous item
         next = "j" -- next item
     },
-<
 
 
 ==============================================================================
 2. Commands	                 			*kent.commands*
 
 
-查詢目前 buffer 的 LSP 有支援哪些功能
->
-    :lua print(vim.inspect(vim.lsp.buf_get_clients()[1].resolved_capabilities)).
-<
-開啟/關閉 diagnostic
+查詢目前 buffer 的 LSP 有支援哪些功能 >vim
 
->
+    :lua print(vim.inspect(vim.lsp.buf_get_clients()[1].resolved_capabilities)).
+
+開啟/關閉 diagnostic >vim
+
     :lua vim.lsp.diagnostic.enable()
     :lua vim.lsp.diagnostic.disable()
-<
 
 ==============================================================================
 3. Tmux				      			*kent.tmux*
@@ -189,11 +185,12 @@ Vim Doc syntax: |help-writing|
 
 code block   >
 
+>vim
   function xxx 
-  ddefe
+    ddefe
   endfunction
 
-<
+
 ------------------------------------------------------------------------------
 			         		  *kent.help.help-syntax*
 
