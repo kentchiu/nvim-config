@@ -5,8 +5,8 @@ Config neovim as PDE (Persnoal IDE)
 ## TODO
 
 - [] toggle diagnostics (`:lua vim.diagnostics.disable()`)
-- [] cmp popup windows max and min size
-- [] cmp window popup with frame (code complete and `K` info)
+- [x] cmp popup windows max and min size
+- [x] cmp window popup with frame (code complete and `K` info)
 - [] add lsp info to <leader> ul
 - [] move Lazy from <leader>l to <leader>uL
 - [] TODO machanizie in trouble.nvim (check <leader <x> and <leader>st in lazyvim)

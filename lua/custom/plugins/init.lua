@@ -218,7 +218,10 @@ return {
     },
   },
   {
-    "nvim-treesitter/playground"
+    "nvim-treesitter/playground",
+    keys = {
+      { "<leader>ut", "<cmd>TSPlaygroundToggle<cr>", desc = "Toggle TS playground" },
+    }
   },
   {
     "windwp/nvim-autopairs",
