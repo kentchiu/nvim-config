@@ -17,7 +17,6 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 整理出來.
 
 
-
 - `gw`: Search word under cursor
 - `ya`: Yank all in braces   
 - `CTRL-<SPACE>` in vmode : Expand selection.
@@ -25,6 +24,12 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 - <leader>ck: lsp signature help
 - gp: paste without lose info (quick replace)
 - g;: run current method
+
+
+有些 keymap 是在特定的 buffer (window) 裡面才有效的, ex: quicklist, 或者是
+telescope 的 查詢 float window, neo-test 的 test summary window,
+這些都有自己的 buffer scope keymaps, 而且只有foucs 停駐在特定的window
+時才會生效. 這時,可以用 `:map` 或是 `:verbose map` 查 keymaps
 
 ------------------------------------------------------------------------------
 			                         *kent.keymaps.comment*
@@ -45,8 +50,6 @@ comment: https://github.com/numToStr/Comment.nvim
 `gb2}` - Toggle until the 2 next blank line
 `gbaf` - Toggle comment around a function (w/ LSP/treesitter support)
 `gbac` - Toggle comment around a class (w/ LSP/treesitter support)  
-
-
 
 
 		                    *kent.keymaps.copy-to-commandline*
@@ -70,6 +73,7 @@ comment: https://github.com/numToStr/Comment.nvim
 - <F1>: step into 
 - <F2>: step over
 - <F3>: step out
+- <F5>: continue
 
 ------------------------------------------------------------------------------
 				                 *kent.keymaps.neotest*
