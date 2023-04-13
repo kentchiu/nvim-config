@@ -41,6 +41,11 @@ return {
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
     end)
 
+    vim.keymap.set('n', '<leader>dl', function() require('dap.ext.vscode').load_launchjs() end,{desc = "Load launchjs"})
+    vim.keymap.set('n', '<leader>du', function() require("dapui").toggle() end, {desc = "Toggle Debugger UI"})
+    vim.keymap.set('n', '<leader>dh', function() require("dap.ui.widgets").hover() end, { desc = "Debugger Hover" })
+
+
     -- copy from astro-nvim
     --[[ maps.n["<F5>"] = { function() require("dap").continue() end, desc = "Debugger: Start" }
     maps.n["<F17>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" } -- Shift+F5
