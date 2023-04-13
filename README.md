@@ -4,6 +4,10 @@ Config neovim as PDE (Persnoal IDE)
 
 ## TODO
 
+- [] load debugger config `require('dap.ext.vscode').load_launchjs()`
+- [] gp (quick paste) remove viw
+- [] default to insert mode when terminal toggle
+- [] gg in nvim-tree conflict with go to first line gg
 - [] toggle diagnostics (`:lua vim.diagnostics.disable()`)
 - [x] cmp popup windows max and min size
 - [x] cmp window popup with frame (code complete and `K` info)

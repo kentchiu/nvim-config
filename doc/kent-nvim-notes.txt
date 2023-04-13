@@ -70,10 +70,45 @@ comment: https://github.com/numToStr/Comment.nvim
 ------------------------------------------------------------------------------
 				                   *kent.keymaps.debug*
 
+先要確定對應的 debugger lib 有安裝, python 需要安裝 'pydebug' 這個是跟 project
+的其他 lib 在一起的, 不要安裝成 global 的.
+
+
+config file 可以先使用 vscode 產生, 產生後要修改成標準的 json 格式 (去掉註解跟
+tail common)
+
+
+使用 `require('dap.ext.vscode').load_launchjs()` 載入 launch.json, 載入後用
+<F5> (continu) 啟動 debugger,如果有成功配置, nvim 會的 debugger
+啟動選項會有 configurations 裡面 name 裡面的值會出現在啟動的選項,選擇該選
+項啟動即可.
+
 - <F1>: step into 
 - <F2>: step over
 - <F3>: step out
 - <F5>: continue
+
+
+.vscode/launch.json example
+
+>json
+  {
+      "version": "0.2.0",
+      "configurations": [
+	  {
+	      "name": "Python: FastAPI",
+	      "type": "python",
+	      "request": "launch",
+	      "module": "uvicorn",
+	      "args": [
+		  "chatgpt.main:app --reload --port 9999"
+	      ],
+	      "jinja": true,
+	      "justMyCode": true
+	  }
+      ]
+  }
+
 
 ------------------------------------------------------------------------------
 				                 *kent.keymaps.neotest*
@@ -153,9 +188,16 @@ from |neotest.setup()|
 - `<lader> + z` : Maximum curren pane
 
 
+==============================================================================
+4. NVIM Config debug			         *kent.nvim-config-debug*
+
+執行純淨版
+
+`nvim -U none`
+
 
 ==============================================================================
-4. MISC	                         			*kent.misc*
+5. MISC	                         			*kent.misc*
 
 Text Object 裡面的 `word` 跟 `WORD` 的差別:
 
@@ -172,7 +214,7 @@ A WORD is... what unix standard thinks is a word.
 - A sequence of characters delimited by any kind of whitespace characters.
 
 ==============================================================================
-5. Help 						*kent.help*
+6. Help 						*kent.help*
 
 如果這個 help file 在 NVIM 裡面變成 readonly , 可以用 `setlocal modifiable`
 讓它變成可以寫入
