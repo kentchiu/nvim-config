@@ -17,13 +17,13 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 整理出來.
 
 
-- `gw`: Search word under cursor
-- `ya`: Yank all in braces   
+- `gw` : Search word under cursor
+- `ya` : Yank all in braces   
 - `CTRL-<SPACE>` in vmode : Expand selection.
-- `K`: lsp hover
-- <leader>ck: lsp signature help
-- gp: paste without lose info (quick replace)
-- g;: run current method
+- `K` : lsp hover
+- <leader> ck : lsp signature help
+- gp : paste without lose info (quick replace)
+- <leader> ; : run current method
 
 
 有些 keymap 是在特定的 buffer (window) 裡面才有效的, ex: quicklist, 或者是

@@ -248,7 +248,7 @@ return {
         sources = {
           nls.builtins.formatting.stylua,
           nls.builtins.formatting.shfmt,
-          nls.builtins.diagnostics.flake8,
+          nls.builtins.diagnostics.mypy,
           nls.builtins.formatting.prettier,
           nls.builtins.formatting.black,
           -- nls.builtins.formatting.eslint_d,

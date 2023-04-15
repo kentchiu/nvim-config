@@ -1,6 +1,5 @@
 return {
   'mfussenegger/nvim-dap',
-
   dependencies = {
     'rcarriga/nvim-dap-ui',
     'williamboman/mason.nvim',
@@ -9,7 +8,6 @@ return {
     -- Add your own debuggers here
     'mfussenegger/nvim-dap-python',
   },
-
   config = function()
     local dap = require 'dap'
     local dapui = require 'dapui'
@@ -36,13 +34,13 @@ return {
     vim.keymap.set('n', '<F1>', dap.step_into)
     vim.keymap.set('n', '<F2>', dap.step_over)
     vim.keymap.set('n', '<F3>', dap.step_out)
-    vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint)
+    vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = "Breakpoint" })
     vim.keymap.set('n', '<leader>dB', function()
       dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-    end)
+    end, { desc = "Condition Breakpoint" })
 
-    vim.keymap.set('n', '<leader>dl', function() require('dap.ext.vscode').load_launchjs() end,{desc = "Load launchjs"})
-    vim.keymap.set('n', '<leader>du', function() require("dapui").toggle() end, {desc = "Toggle Debugger UI"})
+    vim.keymap.set('n', '<leader>dl', function() require('dap.ext.vscode').load_launchjs() end, { desc = "Load launchjs" })
+    vim.keymap.set('n', '<leader>du', function() require("dapui").toggle() end, { desc = "Toggle Debugger UI" })
     vim.keymap.set('n', '<leader>dh', function() require("dap.ui.widgets").hover() end, { desc = "Debugger Hover" })
 
 
@@ -70,8 +68,6 @@ return {
       maps.n["<leader>du"] = { function() require("dapui").toggle() end, desc = "Toggle Debugger UI" }
       maps.n["<leader>dh"] = { function() require("dap.ui.widgets").hover() end, desc = "Debugger Hover" }
     end ]]
-
-
     -- Dap UI setup
     -- For more information, see |:help nvim-dap-ui|
     dapui.setup {

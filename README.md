@@ -4,6 +4,9 @@ Config neovim as PDE (Persnoal IDE)
 
 ## TODO
 
+- [] KEYMAP: remove column mode <leader> cc
+- [] KEYMAP: symbol outlit from <leader> uo to <leader> co
+- [] KEYMAP: remove <leader> a and <leader> A
 - [] KEYMAP: toggle dap-ui
 - [] KEYMAP: load debugger config `require('dap.ext.vscode').load_launchjs()`
 - [] KEYMAP: gp (quick paste) remove viw
@@ -12,6 +15,7 @@ Config neovim as PDE (Persnoal IDE)
 - [] KEYMAP: toggle diagnostics (`:lua vim.diagnostics.disable()`)
 - [x] cmp popup windows max and min size
 - [x] cmp window popup with frame (code complete and `K` info)
+- [] KEYMAP: add mason info to <leader> ul
 - [] KEYMAP: add lsp info to <leader> ul
 - [] KEYMAP:  move Lazy from <leader>l to <leader>uL
 - [] TODO machanizie in trouble.nvim (check <leader <x> and <leader>st in lazyvim)
