@@ -4,6 +4,7 @@ Config neovim as PDE (Persnoal IDE)
 
 ## TODO
 
+- [] KEYMAP: :inspect to view tree sitter node info
 - [] KEYMAP: remove column mode <leader> cc
 - [] KEYMAP: symbol outlit from <leader> uo to <leader> co
 - [] KEYMAP: remove <leader> a and <leader> A

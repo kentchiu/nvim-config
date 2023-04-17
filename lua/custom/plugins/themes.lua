@@ -1,10 +1,24 @@
 return {
+  -- {
+  --   "navarasu/onedark.nvim",
+  --   -- priority = 1000,
+  --   -- config = function()
+  --   --   vim.cmd.colorscheme "onedark"
+  --   -- end,
+  -- },
   {
-    "navarasu/onedark.nvim",
-    -- priority = 1000,
+    "rebelot/kanagawa.nvim",
+    priority = 1000,
     config = function()
-      vim.cmd.colorscheme "onedark"
+      vim.cmd.colorscheme "kanagawa"
     end,
+  },
+  {
+    "olimorris/onedarkpro.nvim",
+    priority = 1000,
+    -- config = function()
+    --   vim.cmd.colorscheme "onedark"
+    -- end,
   },
   {
     "folke/tokyonight.nvim",
