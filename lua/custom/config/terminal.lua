@@ -6,10 +6,9 @@ local Terminal = require("toggleterm.terminal").Terminal
 local lazygit = Terminal:new {
   cmd = "lazygit",
   dir = "git_dir",
-  hidden = true,
   direction = "float",
   float_opts = {
-    border = "shadow",
+    border = "double",
   },
   -- function to run on opening the terminal
   on_open = function(term)
@@ -20,7 +19,7 @@ local lazygit = Terminal:new {
   on_close = function(term)
     vim.cmd "startinsert!"
   end,
-  count = 99,
+  -- count = 99,
 }
 
 function lazygit_toggle()
@@ -49,7 +48,7 @@ local terminal = Terminal:new {
   on_close = function(term)
     vim.cmd "startinsert!"
   end,
-  count = 88,
+  -- count = 88,
 }
 
 function terminal_toggle()
@@ -66,7 +65,7 @@ vim.keymap.set("t", "<C-l>", "<C-\\><C-n><C-w>l", { desc = "Go to right window" 
 
 
 vim.api.nvim_set_keymap("n", "<leader>tt", "<cmd>lua terminal_toggle()<cr>", { noremap = true, silent = true, desc = "Float Terminal" })
-vim.api.nvim_set_keymap("n", "<leader>tT", "<cmd>exe v:count1 . 'ToggleTerm'<cr>", { noremap = true, silent = true, desc = "Terminal" })
+vim.api.nvim_set_keymap("n", "<leader>tT", "'ToggleTerm'<cr>", { noremap = true, silent = true, desc = "Terminal" })
 
 vim.api.nvim_set_keymap("n", "<leader>tr", "<cmd>ToggleTermSendCurrentLine<cr>", { noremap = true, silent = true, desc = "Run Current Line" })
 vim.api.nvim_set_keymap("v", "<leader>tr", "<cmd>ToggleTermSendCurrentLine<cr>", { noremap = true, silent = true, desc = "Run Current Line" })
