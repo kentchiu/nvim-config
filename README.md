@@ -10,8 +10,8 @@ Config neovim as PDE (Persnoal IDE)
 - [] KEYMAP: remove <leader> a and <leader> A
 - [] KEYMAP: toggle dap-ui
 - [] KEYMAP: load debugger config `require('dap.ext.vscode').load_launchjs()`
-- [] KEYMAP: gp (quick paste) remove viw
-- [] default to insert mode when terminal toggle
+- [x] KEYMAP: gp (quick paste) remove viw
+- [x] default to insert mode when terminal toggle
 - [] KEYMAP: gg in nvim-tree conflict with go to first line gg
 - [] KEYMAP: toggle diagnostics (`:lua vim.diagnostics.disable()`)
 - [x] cmp popup windows max and min size

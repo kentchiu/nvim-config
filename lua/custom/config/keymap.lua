@@ -147,8 +147,8 @@ vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll window Downwards And Ce
 vim.keymap.set("n", "<C-u>", "<C-u>zz", { desc = "Scroll window Upwards And Center It" });
 
 -- Paste without losing data in register
-vim.api.nvim_set_keymap("n", "gp", 'viw"0p', {noremap = true, silent = true, desc="Quick Paste"})
-vim.api.nvim_set_keymap("v", "gp", 'viw"0p', {noremap = true, silent = true, desc="Quick Paste"})
+vim.api.nvim_set_keymap("n", "gp", '"0p', {noremap = true, silent = true, desc="Quick Paste"})
+vim.api.nvim_set_keymap("v", "gp", '"0p', {noremap = true, silent = true, desc="Quick Paste"})
 
 -- GitSigns
 vim.keymap.set("n", "<leader>gd",  function() require("gitsigns").diffthis() end, {desc = "View Git diff" }) 

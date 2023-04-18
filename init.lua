@@ -241,6 +241,8 @@ require("nvim-treesitter.configs").setup({
 				["if"] = "@function.inner",
 				["ac"] = "@class.outer",
 				["ic"] = "@class.inner",
+				["ai"] = "@block.outer",
+				["im"] = "@block.inner",
 			},
 		},
 		move = {
@@ -272,6 +274,15 @@ require("nvim-treesitter.configs").setup({
 				["<leader>A"] = "@parameter.inner",
 			},
 		},
+   -- lsp_interop = {
+   --    enable = true,
+   --    border = 'none',
+   --    floating_preview_opts = {},
+   --    peek_definition_code = {
+   --      ["<leader>df"] = "@function.outer",
+   --      ["<leader>dF"] = "@class.outer",
+   --    },
+   --  },
 		-- config for nvim-ts-context-commentstring
 		context_commentstring = {
 			enable = true,
