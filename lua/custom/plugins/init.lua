@@ -257,4 +257,13 @@ return {
       }
     end,
   },
+  {
+    'iamcco/markdown-preview.nvim',
+    keys = { { "<leader>um", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview" } },
+    ft = "markdown",
+    build = function()
+      vim.fn["mkdp#util#install"]()
+    end,
+
+  }
 }
