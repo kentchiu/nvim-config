@@ -29,15 +29,15 @@ return {
       -- },
       { "<leader>fr",      "<cmd>Telescope oldfiles<cr>",                      desc = "Recent" },
       -- git
-      { "<leader>gc",      "<cmd>Telescope git_commits<cr>",                   desc = "Commits" },
-      {
-        "<leader>gC",
-        "<cmd>Telescope git_bcommits<cr>",
-        desc =
-        "Diff Current Buffer"
-      },
+      { "<leader>gC",      "<cmd>Telescope git_commits<cr>",                   desc = "Commits" },
+      -- {
+      --   "<leader>gC",
+      --   "<cmd>Telescope git_bcommits<cr>",
+      --   desc =
+      --   "Diff Current Buffer"
+      -- },
       { "<leader>gs", "<cmd>Telescope git_status<cr>",                desc = "Git Status" },
-      { "<leader>gb", "<cmd>Telescope git_branches<cr>",              desc = "Branches" },
+      { "<leader>gB", "<cmd>Telescope git_branches<cr>",              desc = "Branches" },
       -- search
       { "<leader>sa", "<cmd>Telescope autocommands<cr>",              desc = "Auto Commands" },
       { "<leader>sb", "<cmd>Telescope current_buffer_fuzzy_find<cr>", desc = "Buffer" },
