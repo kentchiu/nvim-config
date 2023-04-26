@@ -53,6 +53,7 @@ comment: https://github.com/numToStr/Comment.nvim
 `gbac` - Toggle comment around a class (w/ LSP/treesitter support)  
 
 
+------------------------------------------------------------------------------
 		                    *kent.keymaps.copy-to-commandline*
 
 1. `gw` or `*` to mark word on cursor
@@ -213,6 +214,17 @@ A word is... an almost C-style variable name.
 A WORD is... what unix standard thinks is a word.
 
 - A sequence of characters delimited by any kind of whitespace characters.
+
+
+------------------------------------------------------------------------------
+						      *kent.poetry*
+
+開發 python 時, 在進入 nvim 前,需要先用 `poetry shell` 進入 virtual
+environment, 不然 LSP 會抓不到對應的lib 跟 python interpretor, 另外在使用
+terminal 時, 需要用 `source .venv/bin/activate` 啟動 terminal 內的 virtual
+environment
+
+這邊應該可以使用 autocmd 自動化這個過程
 
 ==============================================================================
 6. Help 						*kent.help*
