@@ -62,6 +62,24 @@ ls.add_snippets("typescript", {
       "",
     }),
   }),
+  s("debugFormState",
+    fmta([[
+    debugFormState() {
+      const formControls = this.form.controls;
+      for (const key in formControls) {
+        if (formControls.hasOwnProperty(key)) {
+          const control = formControls[key];
+          if (control.invalid) {
+            console.log(key + ' control is invalid.');
+          }
+          if (control.errors) {
+            console.log(key + ' control has an error: ' + JSON.stringify(control.errors));
+          }
+        }
+      }
+    }
+    ]], {}, {})
+  )
 })
 
 
