@@ -61,7 +61,7 @@ ls.add_snippets("typescript", {
       "",
       "",
     }),
-  })
+  }),
 })
 
 

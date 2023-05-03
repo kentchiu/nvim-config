@@ -152,6 +152,8 @@ vim.api.nvim_set_keymap("v", "gp", '"0p', {noremap = true, silent = true, desc="
 
 -- GitSigns
 vim.keymap.set("n", "<leader>gd",  function() require("gitsigns").diffthis() end, {desc = "View Git diff" }) 
+vim.keymap.set("n", "<leader>gl", function() require("gitsigns").blame_line() end, {desc = "View Git blame"}  )
+vim.keymap.set("n", "<leader>gL", function() require("gitsigns").blame_line { full = true }  end, {desc = "View full Git blame"}  )
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
