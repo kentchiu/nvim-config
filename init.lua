@@ -265,15 +265,15 @@ require("nvim-treesitter.configs").setup({
 				["[]"] = "@class.outer",
 			},
 		},
-		swap = {
-			enable = true,
-			swap_next = {
-				["<leader>a"] = "@parameter.inner",
-			},
-			swap_previous = {
-				["<leader>A"] = "@parameter.inner",
-			},
-		},
+		-- swap = {
+		-- 	enable = true,
+		-- 	swap_next = {
+		-- 		["<leader>a"] = "@parameter.inner",
+		-- 	},
+		-- 	swap_previous = {
+		-- 		["<leader>A"] = "@parameter.inner",
+		-- 	},
+		-- },
    -- lsp_interop = {
    --    enable = true,
    --    border = 'none',
@@ -361,8 +361,8 @@ local on_attach = function(_, bufnr)
 		print(vim.inspect(vim.lsp.buf.list_workspace_folders()))
 	end, "[W]orkspace [L]ist Folders")
 
-	nmap("<leader>ci", require("telescope.builtin").lsp_incoming_calls, "lsp_incoming_calls")
-	nmap("<leader>co", require("telescope.builtin").lsp_outgoing_calls, "lsp_outgoing_calls")
+	nmap("<leader>cI", require("telescope.builtin").lsp_incoming_calls, "lsp_incoming_calls")
+	nmap("<leader>cO", require("telescope.builtin").lsp_outgoing_calls, "lsp_outgoing_calls")
 	-- Create a command `:Format` local to the LSP buffer
 	vim.api.nvim_buf_create_user_command(bufnr, "Format", function(_)
 		vim.lsp.buf.format()
@@ -480,14 +480,13 @@ cmp.setup({
 		end, { "i", "s" }),
 	}),
 	sources = {
-		{ name = "nvim_lsp" },
-		{ name = "luasnip" },
-		{ name = "buffer" },
-		{ name = "path" },
+		{ name = "nvim_lsp"},
+		{ name = "luasnip"  },
+		{ name = "buffer"  },
+		{ name = "path"  },
 	},
 	formatting = {
 		format = function(entry, vim_item)
-			print(vim_item)
 			-- -- Kind icons
 			-- vim_item.kind = string.format('%s %s', kind_icons[vim_item.kind], vim_item.kind) -- This concatonates the icons with the name of the item kind
 			-- Source

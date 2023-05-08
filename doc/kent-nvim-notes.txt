@@ -21,11 +21,14 @@ window.比較不會被忽略, 然而有一些 keymap 不適用 <leader> key 觸�
 - `ya` : Yank all in braces   
 - `CTRL-<SPACE>` in vmode : Expand selection.
 - `K` : lsp hover
-- <leader> ck : lsp signature help
-- gp : paste without lose info (quick replace)
-- <leader> ; : run current method
+- `<leader> ck` : lsp signature help
+- `gp` : paste without lose info (quick replace)
+- `<leader> ;` : test current method
 - `CTRL-W o`: Max window.
-
+- `m`: Crete Fold
+- LSP hover 連續觸發兩次後 'K K', cursor 會 focus float window,
+  就可以當做一版的 window 操作
+- `C-w w`: focus 到其他window 
 
 有些 keymap 是在特定的 buffer (window) 裡面才有效的, ex: quicklist, 或者是
 telescope 的 查詢 float window, neo-test 的 test summary window,
@@ -114,6 +117,8 @@ tail common)
 
 ------------------------------------------------------------------------------
 				                 *kent.keymaps.neotest*
+
+
 
 from |neotest.setup()|
 

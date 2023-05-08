@@ -7,7 +7,7 @@ return {
   {
     "simrat39/symbols-outline.nvim",
     cmd = "SymbolsOutline",
-    keys = { { "<leader>uo", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
+    keys = { { "<leader>co", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
     config = true,
   },
   {
@@ -35,8 +35,10 @@ return {
         ["<leader><tab>"] = { name = "+tab" },
         ["<leader>b"] = { name = "+buffer" },
         ["<leader>c"] = { name = "+code" },
+        ["<leader>d"] = { name = "+debug" },
         ["<leader>f"] = { name = "+file/find" },
         ["<leader>g"] = { name = "+git" },
+        ["<leader>p"] = { name = "+playground" },
         ["<leader>r"] = { name = "+rest-client" },
         ["<leader>q"] = { name = "+quit/session" },
         ["<leader>s"] = { name = "+search" },
@@ -272,5 +274,5 @@ return {
       vim.keymap.set("n", "<leader>gb", "<cmd>DiffviewFileHistory<cr>", { desc = "Branch File History" })
       vim.keymap.set("n", "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", { desc = "File History" })
     end
-  }
+  },
 }

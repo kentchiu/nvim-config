@@ -71,8 +71,6 @@ vim.keymap.set({ "i", "v", "n", "s" }, "<C-s>", "<cmd>w<cr><esc>", { desc = "Sav
 vim.keymap.set("v", "<", "<gv")
 vim.keymap.set("v", ">", ">gv")
 
--- lazy
-vim.keymap.set("n", "<leader>l", "<cmd>:Lazy<cr>", { desc = "Lazy" })
 
 -- new file
 vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
@@ -87,6 +85,7 @@ vim.keymap.set("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 --
 vim.keymap.set("n", "<leader>us", "<cmd>set spell!<cr>", { desc = "Toggle Spelling" })
 vim.keymap.set("n", "<leader>uw", "<cmd>set wrap!<cr>", { desc = "Toggle Word Wrap" })
+vim.keymap.set("n", "<leader>ul", "<cmd>:Lazy<cr>", { desc = "Lazy" })
 
 -- Clear search, diff update and redraw
 -- taken from runtime/lua/_editor.lua
@@ -94,9 +93,7 @@ vim.keymap.set("n", "<leader>ur", "<cmd>nohlsearch<Bar>diffupdate<Bar>normal! <C
   { desc = "Redraw / clear hlsearch / diff update" })
 
 -- highlights under cursor
-if vim.fn.has "nvim-0.9.0" == 1 then
-  vim.keymap.set("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
-end
+vim.keymap.set("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 
 -- Diagnostic keymaps
 -- vim.keymap.set("n", "[d", vim.diagnostic.goto_prev)
@@ -112,6 +109,7 @@ vim.keymap.set("n", "<leader>w-", "<C-W>s", { desc = "Split window below" })
 vim.keymap.set("n", "<leader>w|", "<C-W>v", { desc = "Split window right" })
 vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
 vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
+vim.keymap.set({"n", "v", "x"}, "<leader>wc", "<cmd>cclose<cr><cmd>lclose<cr>", {desc="Close error windows"})
 
 -- tabs
 vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
@@ -127,9 +125,9 @@ vim.keymap.set("n", "<A-k>", "<cmd>tablast<cr>", { desc = "Last Tab" })
 
 -- misc
 
--- c-v conflict with windows paste shortcut
-vim.keymap.set("n", "<leader>cc", "<c-v>", { desc = "Column Mode" })
 
+-- Inspect TreeSitter 
+vim.keymap.set( "n" , "<leader>ci", "<cmd>Inspect<cr>", { desc = "Inspect TreeSitter Node" })
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 
@@ -140,7 +138,7 @@ vim.keymap.set({ "n", "x" }, "gw", "*N", { desc = "Search word under cursor" })
 vim.keymap.set("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit all" })
 
 -- create fold
-vim.keymap.set("n", "m", "zf%", { desc = "Create Fold", remap = true })
+-- vim.keymap.set("n", "<leader>z", "zf%", { desc = "Create Fold", remap = true })
 
 -- make page forward/backwoard firendly
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Scroll window Downwards And Center It" });
@@ -154,12 +152,4 @@ vim.api.nvim_set_keymap("v", "gp", '"0p', {noremap = true, silent = true, desc="
 vim.keymap.set("n", "<leader>gd",  function() require("gitsigns").diffthis() end, {desc = "View Git diff" }) 
 vim.keymap.set("n", "<leader>gl", function() require("gitsigns").blame_line() end, {desc = "View Git blame"}  )
 vim.keymap.set("n", "<leader>gL", function() require("gitsigns").blame_line { full = true }  end, {desc = "View full Git blame"}  )
-
--- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
-vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
-  vim.lsp.handlers.hover, { border = "rounded", })
-
-vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
-  vim.lsp.handlers.signature_help, { border = "rounded" }
-)
 

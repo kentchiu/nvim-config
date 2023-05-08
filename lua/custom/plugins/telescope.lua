@@ -16,7 +16,7 @@ return {
         "Find in Files (Grep)"
       },
       { "<leader>:",       "<cmd>Telescope command_history<cr>",               desc = "Command History" },
-      { "<leader><space>", require("telescope.builtin").find_files,            desc = "Find Files" },
+      { "<leader><space>", require("telescope.builtin").oldfiles,            desc = "Find Recent Used Files" },
       -- find
       { "<leader>fb",      "<cmd>Telescope buffers<cr>",                       desc = "Buffers" },
       { "<leader>ff",      require("telescope.builtin").find_files,            desc = "Find Files" },

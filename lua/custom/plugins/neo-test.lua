@@ -7,13 +7,14 @@ return {
     "nvim-neotest/neotest-python",
   },
   keys = {
-    { "<leader>;", function() require("neotest").run.run() end,                     desc = "Test Current Method" },
+    { "<leader>;",  function() require("neotest").run.run() end,                     desc = "Test Current Method" },
     { "<leader>ts", function() require("neotest").summary.toggle() end,              desc = "Toggle Test Summary" },
     { "<leader>tm", function() require("neotest").run.run() end,                     desc = "Test Current Method" },
     { "<leader>tf", function() require("neotest").run.run(vim.fn.expand("%")) end,   desc = "Test Current File" },
-    { "<leader>ta", function() require("neotest").run.run(vim.fn.getcwd()) end,      desc = "Run All Tests" },
-    { "<leader>to", function() require("neotest").output.open({ enter = true }) end, desc = "Output of test results" },
-    { "<leader>tp", function() require("neotest").output_panel.toggle() end,         desc = "Output terminal" },
+    { "<leader>ta", function() require("neotest").run.run(vim.fn.getcwd()) end,      desc = "Test All" },
+    { "<leader>tl", function() require("neotest").run.run({ strategy = "dap" }) end, desc = "Debug The Nearest Test" },
+    { "<leader>to", function() require("neotest").output.open({ enter = true }) end, desc = "Output Of Test Results" },
+    { "<leader>tp", function() require("neotest").output_panel.toggle() end,         desc = "Output Terminal" },
   },
   config = function()
     require("neotest").setup({
