@@ -61,7 +61,7 @@ return {
       vim.keymap.set("n", "q", api.tree.close, opts("Close"))
       vim.keymap.set("n", "r", api.fs.rename, opts("Rename"))
       vim.keymap.set("n", "R", api.tree.reload, opts("Refresh"))
-      vim.keymap.set("n", "s", api.node.run.system, opts("Run System"))
+      -- vim.keymap.set("n", "s", api.node.run.system, opts("Run System"))
       vim.keymap.set("n", "S", api.tree.search_node, opts("Search"))
       vim.keymap.set("n", "U", api.tree.toggle_custom_filter, opts("Toggle Hidden"))
       vim.keymap.set("n", "W", api.tree.collapse_all, opts("Collapse"))
@@ -71,7 +71,7 @@ return {
       vim.keymap.set("n", "<2-LeftMouse>", api.node.open.edit, opts("Open"))
       vim.keymap.set("n", "<2-RightMouse>", api.tree.change_root_to_node, opts("CD"))
       -- END_DEFAULT_ON_ATTACH
-      vim.keymap.set("n", "gg", M.grep, opts("Grep"))
+      vim.keymap.set("n", "s", M.grep, opts("Grep"))
     end
 
     function M.grep()
