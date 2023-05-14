@@ -12,7 +12,7 @@ Config neovim as PDE (Persnoal IDE)
 - [x] KEYMAP: load debugger config `require('dap.ext.vscode').load_launchjs()`
 - [x] KEYMAP: gp (quick paste) remove viw
 - [x] default to insert mode when terminal toggle
-- [ ] KEYMAP: gg in nvim-tree conflict with go to first line gg
+- [x] KEYMAP: gg in nvim-tree conflict with go to first line gg
 - [ ] KEYMAP: toggle diagnostics (`:lua vim.diagnostics.disable()`)
 - [x] cmp popup windows max and min size
 - [x] cmp window popup with frame (code complete and `K` info)

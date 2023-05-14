@@ -188,6 +188,14 @@ from |neotest.setup()|
     :lua vim.lsp.diagnostic.enable()
     :lua vim.lsp.diagnostic.disable()
 
+
+------------------------------------------------------------------------------
+						      *kent.search-and-replace*
+
+
+1. telescope search and send to qlist
+2. `:cdo s/foo/bar/gc`
+
 ==============================================================================
 3. Tmux				      			*kent.tmux*
 

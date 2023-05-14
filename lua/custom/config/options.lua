@@ -17,7 +17,7 @@ vim.opt.list = true -- Show some invisible characters (tabs...
 vim.opt.mouse = "a" -- Enable mouse mode
 vim.opt.number = true -- Print line number
 vim.opt.pumblend = 10 -- Popup blend
-vim.opt.pumheight = 10 -- Maximum number of entries in a popup
+vim.opt.pumheight = 20 -- Maximum number of entries in a popup
 vim.opt.relativenumber = true -- Relative line numbers
 vim.opt.scrolloff = 4 -- Lines of context
 vim.opt.sessionoptions = { "buffers", "curdir", "tabpages", "winsize" }
@@ -56,3 +56,7 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
   vim.lsp.handlers.signature_help, { border = "rounded" }
 )
 
+-- Disable codeium on those file type: markdown
+vim.g.codeium_filetypes = {
+  markdown = false,
+}
