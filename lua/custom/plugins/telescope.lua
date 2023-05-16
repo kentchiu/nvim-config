@@ -20,13 +20,7 @@ return {
       -- find
       { "<leader>fb",      "<cmd>Telescope buffers<cr>",                       desc = "Buffers" },
       { "<leader>ff",      require("telescope.builtin").find_files,            desc = "Find Files" },
-      -- {
-      --   "<leader>fF",
-      --   function()
-      --     require("telescope.builtin").find_files({ cwd = false })
-      --   end,
-      --   desc = "Find Files (cwd)"
-      -- },
+      { "<leader>sf",      require("telescope.builtin").find_files,            desc = "Find Files" },
       { "<leader>fr",      "<cmd>Telescope oldfiles<cr>",                      desc = "Recent" },
       -- git
       { "<leader>gC",      "<cmd>Telescope git_commits<cr>",                   desc = "Commits" },
