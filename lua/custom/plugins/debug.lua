@@ -42,6 +42,7 @@ return {
     vim.keymap.set('n', '<leader>dl', function() require('dap.ext.vscode').load_launchjs() end, { desc = "Load launchjs" })
     vim.keymap.set('n', '<leader>du', function() require("dapui").toggle() end, { desc = "Toggle Debugger UI" })
     vim.keymap.set('n', '<leader>dh', function() require("dap.ui.widgets").hover() end, { desc = "Debugger Hover" })
+    vim.keymap.set('n', '<leader>dh', function() require("dapui").float_element() end, { desc = "Float Element" })
 
 
     -- copy from astro-nvim
