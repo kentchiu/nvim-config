@@ -4,6 +4,7 @@ Config neovim as PDE (Persnoal IDE)
 
 ## TODO
 
+- [ ] Telescope old file lists too many files 
 - [ ] KEYMAP: :Inspect to view tree sitter node info
 - [x] KEYMAP: remove column mode <leader> cc
 - [x] KEYMAP: symbol outline from <leader> uo to <leader> co
