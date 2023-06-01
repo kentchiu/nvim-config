@@ -4,8 +4,16 @@ Config neovim as PDE (Persnoal IDE)
 
 ## TODO
 
+- [ ] symbol outlint float window
 - [ ] Telescope old file lists too many files 
 - [ ] KEYMAP: :Inspect to view tree sitter node info
+- [ ] TODO machanizie in trouble.nvim (check <leader <x> and <leader>st in lazyvim)
+- [ ] KEYMAP:  ut -> toogle options like lazyvim
+- [ ] remove buffer use :bdelete command in telescope buffers view
+- [ ] Find recent file only under current folder
+- [ ] spell check correct in quick fix or code aciton
+- [ ] spell check auto enable by file type
+- [ ] KEYMAP: toggle diagnostics (`:lua vim.diagnostics.disable()`)
 - [x] KEYMAP: remove column mode <leader> cc
 - [x] KEYMAP: symbol outline from <leader> uo to <leader> co
 - [x] KEYMAP: remove <leader> a and <leader> A
@@ -14,18 +22,11 @@ Config neovim as PDE (Persnoal IDE)
 - [x] KEYMAP: gp (quick paste) remove viw
 - [x] default to insert mode when terminal toggle
 - [x] KEYMAP: gg in nvim-tree conflict with go to first line gg
-- [ ] KEYMAP: toggle diagnostics (`:lua vim.diagnostics.disable()`)
 - [x] cmp popup windows max and min size
 - [x] cmp window popup with frame (code complete and `K` info)
 - [x] ~~KEYMAP: add mason info to <leader> ul~~ 
 - [x] ~~KEYMAP: add lsp info to <leader> ul~~
 - [x] KEYMAP:  move Lazy from <leader>l to <leader>uL
-- [ ] TODO machanizie in trouble.nvim (check <leader <x> and <leader>st in lazyvim)
-- [ ] KEYMAP:  ut -> toogle options like lazyvim
-- [ ] remove buffer use :bdelete command in telescope buffers view
-- [ ] Find recent file only under current folder
-- [ ] spell check correct in quick fix or code aciton
-- [ ] spell check auto enable by file type
 - [x] spell check toggle 
 - [x] dracula theme
 - [x] Tokyo night theme 

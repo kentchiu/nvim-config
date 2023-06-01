@@ -42,7 +42,7 @@ return {
       })
 
       -- random theme
-      local items = { "onedarkpro", "kanagawa", "tokyonight", "dracula",
+      local items = { "onedark", "kanagawa", "tokyonight", "dracula",
         "github_light", "github_light_default",
         "github_dark", "github_dark_dimmed", "github_dark_high_contrast" }
 
