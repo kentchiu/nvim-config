@@ -128,6 +128,10 @@ vim.keymap.set("n", "<A-k>", "<cmd>tablast<cr>", { desc = "Last Tab" })
 
 -- Inspect TreeSitter 
 vim.keymap.set( "n" , "<leader>ci", "<cmd>Inspect<cr>", { desc = "Inspect TreeSitter Node" })
+
+-- diagnostics
+vim.keymap.set("n", "<leader>cx", function() vim.diagnostic.open_float({ border = "rounded" }) end, { desc = "View Diagnostics In Float Window" })
+
 -- Clear search with <esc>
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>", { desc = "Escape and clear hlsearch" })
 

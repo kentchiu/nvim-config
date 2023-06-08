@@ -60,3 +60,13 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
 vim.g.codeium_filetypes = {
   markdown = false,
 }
+
+-- wrap on markdown filetype
+vim.api.nvim_create_autocmd('FileType', {
+  pattern = {'markdown'},
+  desc = 'Word wrap on Markdown',
+  callback = function()
+    vim.opt_local.wrap = true
+  end
+})  
+ 
