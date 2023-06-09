@@ -47,7 +47,6 @@ vim.opt.listchars = { space = " ", tab = "  ", eol = "↵"}
 -- Highlight more visualable
 vim.cmd('highlight Visual guifg=NONE guibg=#6495ED')
 
-
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(
   vim.lsp.handlers.hover, { border = "rounded", })
@@ -68,5 +67,5 @@ vim.api.nvim_create_autocmd('FileType', {
   callback = function()
     vim.opt_local.wrap = true
   end
-})  
- 
+})
+

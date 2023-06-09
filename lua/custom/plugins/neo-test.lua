@@ -29,7 +29,7 @@ return {
           -- See https://github.com/microsoft/debugpy/wiki/Debug-configuration-settings for values
           dap = { 
             justMyCode = false,
-            console = "integratedTerminal",
+            -- console = "integratedTerminal",
           },
           -- Command line arguments for runner
           -- Can also be a function to return dynamic values
