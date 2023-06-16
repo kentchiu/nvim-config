@@ -6,7 +6,9 @@ return {
       vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true })
 
       -- disable the <Tab> binding
-      vim.g.codeium_disable_bindings = 1
+      -- vim.g.codeium_disable_bindings = 1
+      vim.g.codeium_no_map_tab = true
+
       -- disable in specific filetypes
       vim.g.codeium_filetypes = { markdown = false, }
       -- vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
