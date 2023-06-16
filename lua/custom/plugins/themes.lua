@@ -18,7 +18,7 @@ return {
         "kanagawa", "kanagawa-wave", "kanagawa-dragon", "kanagawa-lotus",
         -- "github_light", "github_light_high_contrast",
         "github_dark", "github_dark_dimmed", "github_dark_high_contrast" ,
-        "catppuccin", "catppuccin-latte", "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha",
+        "catppuccin", "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha",
       }
 
       math.randomseed(os.time())

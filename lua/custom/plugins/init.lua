@@ -1,8 +1,3 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
---
--- See the kickstart.nvim README for more information
---
 return {
   {
     "simrat39/symbols-outline.nvim",
@@ -177,48 +172,6 @@ return {
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
   },
-  { "nvim-telescope/telescope-symbols.nvim" },
-  {
-    -- Set lualine as statusline
-    "nvim-lualine/lualine.nvim",
-    -- See `:help lualine.txt`
-    opts = {
-      options = {
-        icons_enabled = true,
-        theme = "auto",
-        component_separators = "|",
-        section_separators = "",
-      },
-      sections = {
-        lualine_c = {
-          {
-            "filetype",
-            icon_only = true,
-            separator = "",
-            padding = { right = 0, left = 1 },
-          },
-          {
-            'filename',
-            file_status = true,    -- Displays file status (readonly status, modified status)
-            newfile_status = true, -- Display new file status (new file means no write after created)
-            path = 1,              -- 0: Just the filename
-            -- 1: Relative path
-            -- 2: Absolute path
-            -- 3: Absolute path, with tilde as the home directory
-
-            shorting_target = 40, -- Shortens path to leave 40 spaces in the window
-            -- for other components. (terrible name, any suggestions?)
-            symbols = {
-              modified = ' ❗❗❗', -- Text to show when the buffer is modified
-              readonly = ' 🔒',    -- Text to show when the file is non-modifiable or readonly.
-              unnamed = '[No Name]', -- Text to show for unnamed buffers.
-              newfile = '[New]',
-            },
-          }
-        },
-      },
-    },
-  },
   {
     "nvim-treesitter/playground",
     keys = {
@@ -273,22 +226,6 @@ return {
     config = function()
       vim.keymap.set("n", "<leader>gb", "<cmd>DiffviewFileHistory<cr>", { desc = "Branch File History" })
       vim.keymap.set("n", "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", { desc = "File History" })
-    end
-  },
-  {
-    "Exafunction/codeium.vim",
-    config = function()
-      -- Change '<C-g>' here to any keycode you like.
-      vim.keymap.set('i', '<C-g>', function() return vim.fn['codeium#Accept']() end, { expr = true })
-
-      -- disable the <Tab> binding
-      vim.g.codeium_disable_bindings = 1
-      -- disable in specific filetypes
-      vim.g.codeium_filetypes = { markdown = false, }
-      -- vim.keymap.set('i', '<c-;>', function() return vim.fn['codeium#CycleCompletions'](1) end, { expr = true })
-      -- vim.keymap.set('i', '<c-,>', function() return vim.fn['codeium#CycleCompletions'](-1) end, { expr = true })
-      -- vim.keymap.set('i', '<c-x>', function() return vim.fn['codeium#Clear']() end, { expr = true })
-      --
     end
   },
 }
