@@ -55,11 +55,6 @@ vim.lsp.handlers["textDocument/signatureHelp"] = vim.lsp.with(
   vim.lsp.handlers.signature_help, { border = "rounded" }
 )
 
--- Disable codeium on those file type: markdown
-vim.g.codeium_filetypes = {
-  markdown = false,
-}
-
 -- wrap on markdown filetype
 vim.api.nvim_create_autocmd('FileType', {
   pattern = {'markdown'},
