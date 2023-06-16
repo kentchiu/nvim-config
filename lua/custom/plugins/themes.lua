@@ -12,7 +12,7 @@ return {
       })
       -- random theme
       local items = {
-        "onedark", "onelight", "onedark_vivid", "onedark_dark",
+        "onedark", "onedark_vivid", "onedark_dark",
         "tokyonight", "tokyonight-night", "tokyonight-storm", "tokyonight-day", "tokyonight-moon",
         "dracula", "dracula-soft",
         "kanagawa", "kanagawa-wave", "kanagawa-dragon", "kanagawa-lotus",
