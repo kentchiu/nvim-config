@@ -196,6 +196,15 @@ from |neotest.setup()|
 1. telescope search and send to qlist
 2. `:cdo s/foo/bar/gc`
 
+
+  :grep foo
+  :cdo s/foo/bar
+  :cfdo update
+`
+
+update 是指將文件保存並更新。
+因此，當你在 NeoVim 中執行 cfdo update 指令時，它會對當前打開的所有文件進行保存並更新操作。
+
 ------------------------------------------------------------------------------
 						      *kent.diff*
 
