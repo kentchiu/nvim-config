@@ -13,10 +13,9 @@ return {
       -- random theme
       local items = {
         "onedark", "onedark_vivid", "onedark_dark",
-        "tokyonight", "tokyonight-night", "tokyonight-storm", "tokyonight-day", "tokyonight-moon",
+        "tokyonight", "tokyonight-night", "tokyonight-storm",  "tokyonight-moon",
         "dracula", "dracula-soft",
-        "kanagawa", "kanagawa-wave", "kanagawa-dragon", "kanagawa-lotus",
-        -- "github_light", "github_light_high_contrast",
+        "kanagawa", "kanagawa-wave", "kanagawa-dragon",
         "github_dark", "github_dark_dimmed", "github_dark_high_contrast" ,
         "catppuccin", "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha",
       }
