@@ -1,7 +1,7 @@
 return {
   -- {
-  --   "m4xshen/hardtime.nvim",
-  --   event = "VeryLazy",
-  --   opts = {}
+  --   'tzachar/cmp-tabnine',
+  --   build = './install.sh',
+  --   dependencies = 'hrsh7th/nvim-cmp',
   -- },
 }
