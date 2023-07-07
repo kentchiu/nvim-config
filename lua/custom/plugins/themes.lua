@@ -16,7 +16,7 @@ return {
         "tokyonight", "tokyonight-night", "tokyonight-storm",  "tokyonight-moon",
         "dracula", "dracula-soft",
         "kanagawa", "kanagawa-wave", "kanagawa-dragon",
-        "github_dark", "github_dark_dimmed", "github_dark_high_contrast" ,
+        "github_dark", "github_dark_dimmed", 
         "catppuccin", "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha",
       }
 
