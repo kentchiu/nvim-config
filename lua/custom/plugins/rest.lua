@@ -3,34 +3,34 @@ return {
     "rest-nvim/rest.nvim",
     lazy = true,
     ft = "http",
-    -- keys = {
-    --   {
-    --     "<leader>rr",
-    --     function()
-    --       require("rest-nvim").run()
-    --     end,
-    --     desc = "RestNvimRun",
-    --   },
-    --   -- {
-    --   --   "<leader>rt",
-    --   --   "<cmd>lua require("rest-nvim").run()<cr>",
-    --   --   desc = "RestNvimRun",
-    --   -- },
-    --   {
-    --     "<leader>rc",
-    --     function()
-    --       require("rest-nvim").run(true)
-    --     end,
-    --     desc = "RestNvimPreview(curl)",
-    --   },
-    --   {
-    --     "<leader>rl",
-    --     function()
-    --       require("rest-nvim").last()
-    --     end,
-    --     desc = "RestNvimLast",
-    --   },
-    -- },
+    keys = {
+      {
+        "<leader>rR",
+        function()
+          require("rest-nvim").run()
+        end,
+        desc = "RestNvimRun",
+      },
+      -- {
+      --   "<leader>rt",
+      --   "<cmd>lua require("rest-nvim").run()<cr>",
+      --   desc = "RestNvimRun",
+      -- },
+      {
+        "<leader>rC",
+        function()
+          require("rest-nvim").run(true)
+        end,
+        desc = "RestNvimPreview(curl)",
+      },
+      {
+        "<leader>rL",
+        function()
+          require("rest-nvim").last()
+        end,
+        desc = "RestNvimLast",
+      },
+    },
     config = function()
       require("rest-nvim").setup({
         -- Open request results in a horizontal split

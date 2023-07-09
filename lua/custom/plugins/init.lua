@@ -1,11 +1,5 @@
 return {
   {
-    "simrat39/symbols-outline.nvim",
-    cmd = "SymbolsOutline",
-    keys = { { "<leader>co", "<cmd>SymbolsOutline<cr>", desc = "Symbols Outline" } },
-    config = true,
-  },
-  {
     "akinsho/toggleterm.nvim",
     version = "*",
     opts = {
@@ -34,7 +28,7 @@ return {
         ["<leader>f"] = { name = "+file/find" },
         ["<leader>g"] = { name = "+git" },
         ["<leader>p"] = { name = "+playground" },
-        ["<leader>r"] = { name = "+rest-client" },
+        ["<leader>r"] = { name = "+refactory/rest" },
         ["<leader>q"] = { name = "+quit/session" },
         ["<leader>s"] = { name = "+search" },
         ["<leader>u"] = { name = "+ui" },
