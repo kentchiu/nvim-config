@@ -67,5 +67,8 @@ EOF
         }
       }
     })
+
+    vim.keymap.set('n', '<leader>fp', '<cmd>Easypick<cr>', { desc = "Easypick"})
   end,
+
 }
