@@ -1,11 +1,4 @@
 return {
-  {
-    "akinsho/toggleterm.nvim",
-    version = "*",
-    opts = {
-      open_mapping = [[<c-\>]],
-    }
-  },
   -- Useful plugin to show you pending keybinds.
   {
     "folke/which-key.nvim",
