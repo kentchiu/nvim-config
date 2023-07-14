@@ -318,6 +318,7 @@ local on_attach = function(_, bufnr)
   nmap("<leader>ca", vim.lsp.buf.code_action, "Code Action")
 
   nmap("gd", vim.lsp.buf.definition, "Goto Definition")
+  nmap("gD", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>","Goto Definition")
 
   nmap("gr", function()
     require("telescope.builtin").lsp_references()
@@ -354,7 +355,7 @@ local on_attach = function(_, bufnr)
   nmap("<leader>ck", vim.lsp.buf.signature_help, "Signature Documentation")
 
   -- Lesser used LSP functionality
-  nmap("gD", vim.lsp.buf.declaration, "Goto Declaration")
+  -- nmap("gD", vim.lsp.buf.declaration, "Goto Declaration")
   nmap("<leader>cwa", vim.lsp.buf.add_workspace_folder, "[W]orkspace [A]dd Folder")
   nmap("<leader>cwr", vim.lsp.buf.remove_workspace_folder, "[W]orkspace [R]emove Folder")
   nmap("<leader>cwl", function()
