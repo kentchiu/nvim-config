@@ -34,9 +34,15 @@ return {
       vim.api.nvim_set_keymap("v", "<leader>rr", ":lua require('refactoring').select_refactor()<CR>",
         { noremap = true, silent = true, expr = false, desc = "Refactor" })
 
+      -- You can also use below = true here to to change the position of the printf
+      -- statement (or set two remaps for either one). This remap must be made in normal mode.
+      vim.keymap.set( "n", "<leader>rp", function() require('refactoring').debug.printf({ below = false }) end,
+        { noremap = true, desc = "Printf" })
+
       -- Remap in normal mode and passing { normal = true } will automatically find the variable under the cursor and print it
       vim.api.nvim_set_keymap("n", "<leader>rv", ":lua require('refactoring').debug.print_var({ normal = true })<CR>",
         { noremap = true, desc = "Print variable" })
+
       -- Remap in visual mode will print whatever is in the visual selection
       vim.api.nvim_set_keymap("v", "<leader>rv", ":lua require('refactoring').debug.print_var({})<CR>",
         { noremap = true, desc = "Print variable" })
@@ -44,6 +50,32 @@ return {
       -- Cleanup function: this remap should be made in normal mode
       vim.api.nvim_set_keymap("n", "<leader>rc", ":lua require('refactoring').debug.cleanup({})<CR>",
         { noremap = true, desc = "Cleanup" })
+
+      -- require('refactoring').setup({
+      --   printf_statements = {
+      --     javascript = {
+      --       'console.log("🟥 , %s");',
+      --     },
+      --     typescript = {
+      --       'console.log("🟥 , %s");',
+      --     },
+      --     python = {
+      --       'print("---> %s {%s}")',
+      --     }
+      --   },
+      --   print_var_statements = {
+      --     javascript = {
+      --       'console.log("🟥 %s %%s", %s);',
+      --     }
+      --     ,
+      --     typescript = {
+      --       'console.log("🟥 %s %%s", %s);',
+      --     },
+      --     python = {
+      --       'print(f"---> %s {%s} ")',
+      --     }
+      --   },
+      -- })
     end
   }
 }

@@ -66,35 +66,6 @@ return {
     },
   },
   {
-    "phaazon/hop.nvim",
-    config = function()
-      -- you can configure Hop the way you like here; see :h hop-config
-      require "hop".setup {
-
-      }
-      vim.keymap.set("n", "s", "<cmd>HopWord<cr>", { desc = "Hop to word" })
-      vim.keymap.set("n", "S", "<cmd>HopChar2<cr>", { desc = "Hop to Char2" })
-      -- place this in one of your configuration file(s)
-      local hop = require("hop")
-      local directions = require("hop.hint").HintDirection
-      vim.keymap.set("", "f", function()
-        hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
-      end, { remap = true })
-      vim.keymap.set("", "f", function()
-        hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
-      end, { remap = true })
-      vim.keymap.set("", "F", function()
-        hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
-      end, { remap = true })
-      vim.keymap.set("", "t", function()
-        hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
-      end, { remap = true })
-      vim.keymap.set("", "T", function()
-        hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
-      end, { remap = true })
-    end
-  },
-  {
     "echasnovski/mini.surround",
     keys = function(_, keys)
       -- Populate the keys based on the user's options
@@ -159,12 +130,12 @@ return {
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
   },
-  {
-    "nvim-treesitter/playground",
-    keys = {
-      { "<leader>ut", "<cmd>TSPlaygroundToggle<cr>", desc = "Toggle TS playground" },
-    }
-  },
+  -- {
+  --   "nvim-treesitter/playground",
+  --   keys = {
+  --     { "<leader>ut", "<cmd>TSPlaygroundToggle<cr>", desc = "Toggle TS playground" },
+  --   }
+  -- },
   {
     "windwp/nvim-autopairs",
     opts = {

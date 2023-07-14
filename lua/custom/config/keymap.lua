@@ -158,3 +158,5 @@ vim.keymap.set("n", "<leader>gd",  function() require("gitsigns").diffthis() end
 vim.keymap.set("n", "<leader>gl", function() require("gitsigns").blame_line() end, {desc = "View Git blame"}  )
 vim.keymap.set("n", "<leader>gL", function() require("gitsigns").blame_line { full = true }  end, {desc = "View full Git blame"}  )
 
+-- unit tests
+vim.keymap.set("n", "<leader>tt", "<cmd>!pytest<cr>", { desc = "Run Pytest Test" })
