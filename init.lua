@@ -326,6 +326,9 @@ local on_attach = function(_, bufnr)
 
   nmap("gR", function()
     require("telescope.builtin").lsp_references({ jump_type = "vsplit" })
+
+  nmap("<leader>cx", function() vim.diagnostic.open_float({ border = "rounded" }) end,
+  { desc = "View Diagnostics In Float Window" })
     -- require("telescope.builtin").lsp_definitions({jump_type="vsplit"})
   end, "Goto References(vsplit)")
 

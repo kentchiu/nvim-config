@@ -110,7 +110,7 @@ vim.keymap.set("n", "<leader>w-", "<C-W>s", { desc = "Split window below" })
 vim.keymap.set("n", "<leader>w|", "<C-W>v", { desc = "Split window right" })
 vim.keymap.set("n", "<leader>-", "<C-W>s", { desc = "Split window below" })
 vim.keymap.set("n", "<leader>|", "<C-W>v", { desc = "Split window right" })
-vim.keymap.set({"n", "v", "x"}, "<leader>wc", "<cmd>cclose<cr><cmd>lclose<cr>", {desc="Close error windows"})
+vim.keymap.set({ "n", "v", "x" }, "<leader>wc", "<cmd>cclose<cr><cmd>lclose<cr><cmd>tabclose<cr>", { desc = "Close error windows" })
 
 -- tabs
 vim.keymap.set("n", "<leader><tab>l", "<cmd>tablast<cr>", { desc = "Last Tab" })
