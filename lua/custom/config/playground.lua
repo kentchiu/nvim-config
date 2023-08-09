@@ -39,7 +39,15 @@ vim.keymap.set('n', '<leader>P', '"+P')  -- paste before cursor ]]
 --     desc = "RestNvimRun",
 --   },
 
-
-
+-- vim.api.nvim_create_autocmd('BufEnter', {
+--   desc = 'keymap only on markdown (obsidian)',
+--
+--   group = vim.api.nvim_create_augroup('obsidian_actions', { clear = true }),
+--   callback = function(opts)
+--     if vim.bo[opts.buf].filetype == 'markdown' then
+--       vim.api.nvim_buf_set_keymap(0 , "n", "<leader>pg", "<cmd>ObsidianFollowLink<cr>", { desc = "ObsidianFollowLink" })
+--     end
+--   end,
+-- })
 -- paste after cursor
 -- vim: ts=2 sts=2 sw=2 et
