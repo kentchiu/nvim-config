@@ -5,6 +5,7 @@ return {
     dependencies = {
       "nvim-lua/plenary.nvim",
       "debugloop/telescope-undo.nvim",
+      "nvim-telescope/telescope-live-grep-args.nvim",
     },
     cmd = "Telescope",
     version = false, -- telescope did only one release, so use HEAD for now
@@ -42,7 +43,7 @@ return {
       { "<leader>sc",      "<cmd>Telescope command_history<cr>",                 desc = "Command History" },
       { "<leader>sC",      "<cmd>Telescope commands<cr>",                        desc = "Commands" },
       { "<leader>sE",      "<cmd>Telescope symbols<cr>",                         desc = "Emoji" },
-      { "<leader>sg",      require("telescope.builtin").live_grep,               desc = "Find in Files (Grep)" },
+      -- { "<leader>sg",      require("telescope.builtin").live_grep,               desc = "Find in Files (Grep)" },
       --[[
   maps.n["<leader>fW"] = {
     function()
@@ -168,7 +169,8 @@ return {
         },
       })
       require("telescope").load_extension("undo")
-
+      require("telescope").load_extension("live_grep_args")
+      vim.keymap.set("n", "<leader>sg", ":lua require('telescope').extensions.live_grep_args.live_grep_args()<CR>")
       -- optional: vim.keymap.set("n", "<leader>u", "<cmd>Telescope undo<cr>")
     end,
   },
