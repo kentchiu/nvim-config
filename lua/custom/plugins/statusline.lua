@@ -35,16 +35,17 @@ return {
               unnamed = '[No Name]', -- Text to show for unnamed buffers.
               newfile = '[New]',
             },
-          }
+          },
         },
-        lualine_x = {
-          {
-            function()
-              return vim.fn["codeium#GetStatusString"]()
-            end
-          }
 
-        }
+        -- lualine_x = {
+        --   {
+        --     function()
+        --       return vim.fn["codeium#GetStatusString"]()
+        --     end
+        --   }
+        --
+        -- }
       },
     },
   },

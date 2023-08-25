@@ -1,101 +1,128 @@
 return {
-  'mfussenegger/nvim-dap',
-  dependencies = {
-    'rcarriga/nvim-dap-ui',
-    'williamboman/mason.nvim',
-    'jay-babu/mason-nvim-dap.nvim',
+  {
+    "mfussenegger/nvim-dap",
 
-    -- Add your own debuggers here
-    'mfussenegger/nvim-dap-python',
-  },
-  config = function()
-    local dap = require 'dap'
-    local dapui = require 'dapui'
+    dependencies = {
 
-    require('mason-nvim-dap').setup {
-      -- Makes a best effort to setup the various debuggers with
-      -- reasonable debug configurations
-      automatic_setup = true,
-
-      ensure_installed = {
-        -- Update this to ensure that you have the debuggers for the langs you want
-        'debugpy',
+      -- fancy UI for the debugger
+      {
+        "rcarriga/nvim-dap-ui",
+        -- stylua: ignore
+        keys = {
+          { "<leader>du", function() require("dapui").toggle({}) end,  desc = "Dap UI" },
+          { "<leader>dU", function() require("dapui").open({reset = true}) end,  desc = "Reset Dap UI" },
+          { "<leader>de", function() require("dapui").eval() end,      desc = "Eval(JUMP)",  mode = { "n", "v" } },
+          { "<leader>df", function() require("dapui").float_element("hover") end,      desc = "Float Element(JUMP)",  mode = { "n", "v" } },
+        },
+        opts = {},
+        config = function(_, opts)
+          local dap = require("dap")
+          local dapui = require("dapui")
+          dapui.setup(opts)
+          dap.listeners.after.event_initialized["dapui_config"] = function()
+            dapui.open({})
+          end
+          dap.listeners.before.event_terminated["dapui_config"] = function()
+            dapui.close({})
+          end
+          dap.listeners.before.event_exited["dapui_config"] = function()
+            dapui.close({})
+          end
+        end,
       },
-    }
 
-    -- You can provide additional configuration to the handlers,
-    -- see mason-nvim-dap README for more information
-    require('mason-nvim-dap').setup({
-      automatic_setup = true
-    })
+      -- virtual text for the debugger
+      {
+        "theHamsta/nvim-dap-virtual-text",
+        opts = {},
+      },
 
-    -- Basic debugging keymaps, feel free to change to your liking!
-    vim.keymap.set('n', '<F5>', dap.continue)
-    vim.keymap.set('n', '<F1>', dap.step_into)
-    vim.keymap.set('n', '<F2>', dap.step_over)
-    vim.keymap.set('n', '<F3>', dap.step_out)
-    vim.keymap.set('n', '<leader>db', dap.toggle_breakpoint, { desc = "Breakpoint" })
-    vim.keymap.set('n', '<leader>dB', function()
-      dap.set_breakpoint(vim.fn.input 'Breakpoint condition: ')
-    end, { desc = "Condition Breakpoint" })
+      -- which key integration
+      {
+        "folke/which-key.nvim",
+        optional = true,
+        opts = {
+          defaults = {
+            ["<leader>d"] = { name = "+debug" },
+            ["<leader>da"] = { name = "+adapters" },
+          },
+        },
+      },
 
-    vim.keymap.set('n', '<leader>dl', function() require('dap.ext.vscode').load_launchjs() end, { desc = "Load launchjs" })
-    vim.keymap.set('n', '<leader>du', function() require("dapui").toggle() end, { desc = "Toggle Debugger UI" })
-    vim.keymap.set('n', '<leader>dh', function() require("dap.ui.widgets").hover() end, { desc = "Debugger Hover" })
-    vim.keymap.set('n', '<leader>dh', function() require("dapui").float_element() end, { desc = "Float Element" })
+      -- mason.nvim integration
+      {
+        "jay-babu/mason-nvim-dap.nvim",
+        dependencies = "mason.nvim",
+        cmd = { "DapInstall", "DapUninstall" },
+        opts = {
+          -- Makes a best effort to setup the various debuggers with
+          -- reasonable debug configurations
+          automatic_installation = true,
+
+          -- You can provide additional configuration to the handlers,
+          -- see mason-nvim-dap README for more information
+          handlers = {},
+
+          -- You'll need to check that you have the required things installed
+          -- online, please don't ask me how to install them :)
+          ensure_installed = {
+            -- Update this to ensure that you have the debuggers for the langs you want
+          },
+        },
+      },
+
+      -- Add your own debuggers here
+      'mfussenegger/nvim-dap-python',
+    },
+
+    -- stylua: ignore
+    keys = {
+      --  to be confirm
+      { "<leader>da", function() require("dap").clear_breakpoints() end,                                    desc = "Clear Breakpoint" }, 
+      { "<leader>dA", function() require("dap").list_breakpoints() end,                                    desc = "List Breakpoint" }, 
+
+      --
+      { "<leader>dB", function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end, desc = "Breakpoint Condition" },
+      { "<leader>db", function() require("dap").toggle_breakpoint() end,                                    desc = "Toggle Breakpoint" }, 
+      { "<leader>dc", function() require("dap").continue() end,                                             desc = "Continue" },
+      { "<leader>dC", function() require("dap").run_to_cursor() end,                                        desc = "Run to Cursor" },
+      { "<leader>dg", function() require("dap").goto_() end,                                                desc = "Go to line (no execute)" },
+      { "<leader>di", function() require("dap").step_into() end,                                            desc = "Step Into" },
+      { "<leader>dj", function() require("dap").down() end,                                                 desc = "Down" },
+      { "<leader>dk", function() require("dap").up() end,                                                   desc = "Up" },
+      { "<leader>dl", function() require("dap").run_last() end,                                             desc = "Run Last" },
+      { "<leader>dL", function() require('dap.ext.vscode').load_launchjs() end,                             desc = "Load launchjs" } ,
+      { "<leader>do", function() require("dap").step_out() end,                                             desc = "Step Out" },
+      { "<leader>dO", function() require("dap").step_over() end,                                            desc = "Step Over" },
+      { "<leader>dp", function() require("dap").pause() end,                                                desc = "Pause" },
+      { "<leader>dr", function() require("dap").repl.toggle() end,                                          desc = "Toggle REPL" },
+      { "<leader>ds", function() require("dap").session() end,                                              desc = "Session" },
+      { "<leader>dt", function() require("dap").terminate() end,                                            desc = "Terminate" },
+      { "<leader>dw", function() require("dap.ui.widgets").hover() end,                                     desc = "Widgets" },
+    },
+    -- maps.n["<F29>"] = { function() require("dap").restart_frame() end, desc = "Debugger: Restart" } -- Control+F5
+    -- maps.n["<leader>dB"] = { function() require("dap").clear_breakpoints() end, desc = "Clear Breakpoints" }
+      
+     
 
 
-    -- copy from astro-nvim
-    --[[ maps.n["<F5>"] = { function() require("dap").continue() end, desc = "Debugger: Start" }
-    maps.n["<F17>"] = { function() require("dap").terminate() end, desc = "Debugger: Stop" } -- Shift+F5
-    maps.n["<F29>"] = { function() require("dap").restart_frame() end, desc = "Debugger: Restart" } -- Control+F5
-    maps.n["<F6>"] = { function() require("dap").pause() end, desc = "Debugger: Pause" }
-    maps.n["<F9>"] = { function() require("dap").toggle_breakpoint() end, desc = "Debugger: Toggle Breakpoint" }
-    maps.n["<F10>"] = { function() require("dap").step_over() end, desc = "Debugger: Step Over" }
-    maps.n["<F11>"] = { function() require("dap").step_into() end, desc = "Debugger: Step Into" }
-    maps.n["<F23>"] = { function() require("dap").step_out() end, desc = "Debugger: Step Out" } -- Shift+F11
-    maps.n["<leader>db"] = { function() require("dap").toggle_breakpoint() end, desc = "Toggle Breakpoint (F9)" }
-    maps.n["<leader>dB"] = { function() require("dap").clear_breakpoints() end, desc = "Clear Breakpoints" }
-    maps.n["<leader>dc"] = { function() require("dap").continue() end, desc = "Start/Continue (F5)" }
-    maps.n["<leader>di"] = { function() require("dap").step_into() end, desc = "Step Into (F11)" }
-    maps.n["<leader>do"] = { function() require("dap").step_over() end, desc = "Step Over (F10)" }
-    maps.n["<leader>dO"] = { function() require("dap").step_out() end, desc = "Step Out (S-F11)" }
-    maps.n["<leader>dq"] = { function() require("dap").close() end, desc = "Close Session" }
-    maps.n["<leader>dQ"] = { function() require("dap").terminate() end, desc = "Terminate Session (S-F5)" }
-    maps.n["<leader>dp"] = { function() require("dap").pause() end, desc = "Pause (F6)" }
-    maps.n["<leader>dr"] = { function() require("dap").restart_frame() end, desc = "Restart (C-F5)" }
-    maps.n["<leader>dR"] = { function() require("dap").repl.toggle() end, desc = "Toggle REPL" }
-    if is_available "nvim-dap-ui" then
-      maps.n["<leader>du"] = { function() require("dapui").toggle() end, desc = "Toggle Debugger UI" }
-      maps.n["<leader>dh"] = { function() require("dap.ui.widgets").hover() end, desc = "Debugger Hover" }
-    end ]]
-    -- Dap UI setup
-    -- For more information, see |:help nvim-dap-ui|
-    dapui.setup {
-      -- Set icons to characters that are more likely to work in every terminal.
-      --    Feel free to remove or use ones that you like more! :)
-      --    Don't feel like these are good choices.
-      -- icons = { expanded = '▾', collapsed = '▸', current_frame = '*' },
-      -- controls = {
-      --   icons = {
-      --     pause = '⏸',
-      --     play = '▶',
-      --     step_into = '⏎',
-      --     step_over = '⏭',
-      --     step_out = '⏮',
-      --     step_back = 'b',
-      --     run_last = '▶▶',
-      --     terminate = '⏹',
-      --   },
-      -- },
-    }
 
-    dap.listeners.after.event_initialized['dapui_config'] = dapui.open
-    dap.listeners.before.event_terminated['dapui_config'] = dapui.close
-    dap.listeners.before.event_exited['dapui_config'] = dapui.close
 
-    -- Install golang specific config
-    require('dap-python').setup('./.venv/bin/python')
-    require('dap-python').test_runner = 'pytest'
-  end,
+    config = function()
+      -- local Config = require("lazyvim.config")
+      -- vim.api.nvim_set_hl(0, "DapStoppedLine", { default = true, link = "Visual" })
+      --
+      -- for name, sign in pairs(Config.icons.dap) do
+      --   sign = type(sign) == "table" and sign or { sign }
+      --   vim.fn.sign_define(
+      --     "Dap" .. name,
+      --     { text = sign[1], texthl = sign[2] or "DiagnosticInfo", linehl = sign[3], numhl = sign[3] }
+      --   )
+      -- end
+
+      -- Install golang specific config
+      require('dap-python').setup('./.venv/bin/python')
+      require('dap-python').test_runner = 'pytest'
+    end,
+  }
 }
