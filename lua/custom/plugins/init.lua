@@ -186,4 +186,7 @@ return {
       vim.keymap.set("n", "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", { desc = "File History" })
     end
   },
+  {
+    "tpope/vim-fugitive",
+  }
 }
