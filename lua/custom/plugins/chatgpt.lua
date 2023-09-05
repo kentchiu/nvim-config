@@ -9,6 +9,7 @@ return {
     },
     config = function()
       require("chatgpt").setup({
+        api_key_cmd = "/home/kent/get_api_key.sh",
         openai_params = {
           model = "gpt-4",
         },
