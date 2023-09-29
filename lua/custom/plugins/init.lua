@@ -130,12 +130,6 @@ return {
       { "<s-tab>", function() require("luasnip").jump(-1) end, mode = { "i", "s" } },
     },
   },
-  -- {
-  --   "nvim-treesitter/playground",
-  --   keys = {
-  --     { "<leader>ut", "<cmd>TSPlaygroundToggle<cr>", desc = "Toggle TS playground" },
-  --   }
-  -- },
   {
     "windwp/nvim-autopairs",
     opts = {
@@ -150,26 +144,6 @@ return {
       require("cmp").event:on("confirm_done", cmp_autopairs.on_confirm_done())
     end,
   },
-  -- {
-  --   "jose-elias-alvarez/null-ls.nvim",
-  --   event = { "BufReadPre", "BufNewFile" },
-  --   dependencies = { "mason.nvim" },
-  --   opts = function()
-  --     local nls = require("null-ls")
-  --     return {
-  --       debug = true,
-  --       sources = {
-  --         nls.builtins.formatting.stylua,
-  --         nls.builtins.formatting.shfmt,
-  --         -- nls.builtins.diagnostics.mypy,
-  --         nls.builtins.formatting.prettier,
-  --         nls.builtins.formatting.black,
-  --         -- nls.builtins.formatting.eslint_d,
-  --         -- nls.builtins.diagnostics.eslint_d,
-  --       },
-  --     }
-  --   end,
-  -- },
   {
     'iamcco/markdown-preview.nvim',
     keys = { { "<leader>um", "<cmd>MarkdownPreviewToggle<cr>", desc = "Markdown Preview" } },
@@ -178,15 +152,4 @@ return {
       vim.fn["mkdp#util#install"]()
     end,
   },
-  {
-    'sindrets/diffview.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    config = function()
-      vim.keymap.set("n", "<leader>gb", "<cmd>DiffviewFileHistory<cr>", { desc = "Branch File History" })
-      vim.keymap.set("n", "<leader>gf", "<cmd>DiffviewFileHistory %<cr>", { desc = "File History" })
-    end
-  },
-  {
-    "tpope/vim-fugitive",
-  }
 }
