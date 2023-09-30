@@ -172,107 +172,90 @@ return {
       {
         "<leader>da",
         function() require("dap").clear_breakpoints() end,
-        desc =
-        "Clear Breakpoint"
+        desc = "Clear Breakpoint"
       },
       {
         "<leader>dA",
         function() require("dap").list_breakpoints() end,
-        desc =
-        "List Breakpoint"
+        desc = "List Breakpoint"
       },
       {
         "<F5>",
         function() require("dap").continue() end,
-        desc =
-        "Continue"
+        desc = "Continue"
       },
       {
         "<F7>",
         function() require("dap").step_into() end,
-        desc =
-        "Step Into"
-      },
-      {
-        "<S-F8>",
-        function() require("dap").step_out() end,
-        desc =
-        "Step Out"
+        desc = "Step Into"
       },
       {
         "<F8>",
         function() require("dap").step_over() end,
-        desc =
-        "Step Over"
+        desc = "Step Over"
+      },
+      {
+        "<S-F8>",
+        function() require("dap").step_out() end,
+        desc = "Step Out"
       },
       --
       {
         "<leader>dB",
         function() require("dap").set_breakpoint(vim.fn.input('Breakpoint condition: ')) end,
-        desc =
-        "Breakpoint Condition"
+        desc = "Breakpoint Condition"
       },
       {
         "<leader>db",
         function() require("dap").toggle_breakpoint() end,
-        desc =
-        "Toggle Breakpoint"
+        desc = "Toggle Breakpoint"
       },
       {
         "<leader>dc",
         function() require("dap").continue() end,
-        desc =
-        "Continue (F5)"
+        desc = "Continue (F5)"
       },
       {
         "<leader>dC",
         function() require("dap").run_to_cursor() end,
-        desc =
-        "Run to Cursor"
+        desc = "Run to Cursor"
       },
       {
         "<leader>dg",
         function() require("dap").goto_() end,
-        desc =
-        "Go to line (no execute)"
+        desc = "Go to line (no execute)"
       },
       {
         "<leader>di",
         function() require("dap").step_into() end,
-        desc =
-        "Step Into (F7)"
+        desc = "Step Into (F7)"
       },
       { "<leader>dj", function() require("dap").down() end, desc = "Down" },
       { "<leader>dk", function() require("dap").up() end,   desc = "Up" },
       {
         "<leader>dl",
         function() require("dap").run_last() end,
-        desc =
-        "Run Last"
+        desc = "Run Last"
       },
       {
         "<leader>dL",
         function() require('dap.ext.vscode').load_launchjs() end,
-        desc =
-        "Load launchjs"
+        desc = "Load launchjs"
       },
       {
         "<leader>do",
-        function() require("dap").step_out() end,
-        desc =
-        "Step Out (Shift-F8)"
+        function() require("dap").step_over() end,
+        desc = "Step Over (F8)"
       },
       {
         "<leader>dO",
-        function() require("dap").step_over() end,
-        desc =
-        "Step Over (F8)"
+        function() require("dap").step_out() end,
+        desc = "Step Out (Shift-F8)"
       },
       {
         "<leader>dp",
         function() require("dap").pause() end,
-        desc =
-        "Pause"
+        desc = "Pause"
       },
       {
         "<leader>dr",
@@ -283,20 +266,17 @@ return {
       {
         "<leader>ds",
         function() require("dap").session() end,
-        desc =
-        "Session"
+        desc = "Session"
       },
       {
         "<leader>dt",
         function() require("dap").terminate() end,
-        desc =
-        "Terminate"
+        desc = "Terminate"
       },
       {
         "<leader>dw",
         function() require("dap.ui.widgets").hover() end,
-        desc =
-        "Widgets"
+        desc = "Widgets"
       },
     },
     -- maps.n["<F29>"] = { function() require("dap").restart_frame() end, desc = "Debugger: Restart" } -- Control+F5
