@@ -5,7 +5,10 @@ return {
       { "nvim-lua/plenary.nvim" },
       { "nvim-treesitter/nvim-treesitter" }
     },
-    config = function()
+    opts = {
+
+    },
+    config = function(_, opts)
       -- Remaps for the refactoring operations currently offered by the plugin
       vim.api.nvim_set_keymap("v", "<leader>re",
         [[ <Esc><Cmd>lua require('refactoring').refactor('Extract Function')<CR>]],
@@ -36,7 +39,7 @@ return {
 
       -- You can also use below = true here to to change the position of the printf
       -- statement (or set two remaps for either one). This remap must be made in normal mode.
-      vim.keymap.set( "n", "<leader>rp", function() require('refactoring').debug.printf({ below = false }) end,
+      vim.keymap.set("n", "<leader>rp", function() require('refactoring').debug.printf({ below = false }) end,
         { noremap = true, desc = "Printf" })
 
       -- Remap in normal mode and passing { normal = true } will automatically find the variable under the cursor and print it
@@ -51,31 +54,33 @@ return {
       vim.api.nvim_set_keymap("n", "<leader>rc", ":lua require('refactoring').debug.cleanup({})<CR>",
         { noremap = true, desc = "Cleanup" })
 
-      -- require('refactoring').setup({
-      --   printf_statements = {
-      --     javascript = {
-      --       'console.log("🟥 , %s");',
-      --     },
-      --     typescript = {
-      --       'console.log("🟥 , %s");',
-      --     },
-      --     python = {
-      --       'print("---> %s {%s}")',
-      --     }
-      --   },
-      --   print_var_statements = {
-      --     javascript = {
-      --       'console.log("🟥 %s %%s", %s);',
-      --     }
-      --     ,
-      --     typescript = {
-      --       'console.log("🟥 %s %%s", %s);',
-      --     },
-      --     python = {
-      --       'print(f"---> %s {%s} ")',
-      --     }
-      --   },
-      -- })
+
+
+      require("refactoring").setup({
+        -- overrides
+        printf_statements = {
+          typescript = {
+            'console.log("🟥 %s");',
+          },
+          typescriptreact = {
+            'console.log("🟥 %s");',
+          },
+          python = {
+            'print(f"🟥 %s")'
+          }
+        },
+        print_var_statements = {
+          typescript = {
+            'console.info("🟥 %s", %s);',
+          },
+          typescriptreact = {
+            'console.info("🟥 %s", %s);',
+          },
+          python = {
+            'print(f"🟥 %s {str(%s)}")'
+          }
+        },
+      })
     end
   }
 }
