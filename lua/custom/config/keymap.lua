@@ -159,4 +159,8 @@ vim.keymap.set("n", "<leader>gl", function() require("gitsigns").blame_line() en
 vim.keymap.set("n", "<leader>gL", function() require("gitsigns").blame_line { full = true }  end, {desc = "View full Git blame"}  )
 
 -- unit tests
-vim.keymap.set("n", "<leader>tt", "<cmd>!pytest<cr>", { desc = "Run Pytest Test" })
+vim.keymap.set("n", "<leader>tt", "<cmd>!pytest<cr>", { desc = "Run Pytest Test" , silent = true })
+
+
+-- remove ^M
+vim.keymap.set("n", "<leader>fc", "<cmd>%s/\\r$//g<cr>" ,{desc = "remove ^M" }) 
