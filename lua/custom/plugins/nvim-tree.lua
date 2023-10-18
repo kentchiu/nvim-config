@@ -6,7 +6,7 @@ return {
   },
   lazy = false,
   keys = {
-    { "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", desc = "File Exploror" },
+    -- { "<leader>e", "<cmd>NvimTreeFindFileToggle<cr>", desc = "File Exploror" },
   },
   config = function()
     local M = {}
