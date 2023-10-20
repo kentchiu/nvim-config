@@ -50,6 +50,5 @@ vim.keymap.set('n', '<leader>P', '"+P')  -- paste before cursor ]]
 --   end,
 -- })
 
-
 -- paste after cursor
 -- vim: ts=2 sts=2 sw=2 et
