@@ -58,7 +58,7 @@ require("lazy").setup({
     "hrsh7th/nvim-cmp",
     dependencies = {
       "hrsh7th/cmp-nvim-lsp",
-      "L3MON4D3/LuaSnip",      -- Snippet Engine
+      "L3MON4D3/LuaSnip",         -- Snippet Engine
       "saadparwaiz1/cmp_luasnip", -- luasnip complete source
       "hrsh7th/cmp-buffer",
       "hrsh7th/cmp-path",
@@ -318,7 +318,7 @@ local on_attach = function(_, bufnr)
   nmap("<leader>ca", vim.lsp.buf.code_action, "Code Action")
 
   nmap("gd", vim.lsp.buf.definition, "Goto Definition")
-  nmap("gD", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>","Goto Definition")
+  nmap("gD", "<cmd>vsplit | lua vim.lsp.buf.definition()<cr>", "Goto Definition")
 
   nmap("gr", function()
     require("telescope.builtin").lsp_references()
@@ -327,8 +327,8 @@ local on_attach = function(_, bufnr)
   nmap("gR", function()
     require("telescope.builtin").lsp_references({ jump_type = "vsplit" })
 
-  nmap("<leader>cx", function() vim.diagnostic.open_float({ border = "rounded" }) end,
-  { desc = "View Diagnostics In Float Window" })
+    nmap("<leader>cx", function() vim.diagnostic.open_float({ border = "rounded" }) end,
+      { desc = "View Diagnostics In Float Window" })
     -- require("telescope.builtin").lsp_definitions({jump_type="vsplit"})
   end, "Goto References(vsplit)")
 
@@ -398,9 +398,10 @@ local servers = {
   -- graphql={},
   -- groovy={},
   jsonls = {},
-  jdtls={},
+  jdtls = {},
+  -- java_debug_adapter={},
+  -- java_test={},
   -- marksman={},
-  -- jdtls={},
   -- powershell_es={},
   sqlls = {},
   -- svelte={},

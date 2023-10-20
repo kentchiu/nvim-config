@@ -39,7 +39,10 @@ return {
     ---@type TSConfig
     ---@diagnostic disable-next-line: missing-fields
     opts = {
-      highlight = { enable = true },
+      highlight = {
+        enable = true,
+        disable = { "lua" },
+      },
       indent = { enable = true },
       ensure_installed = {
         "bash",
