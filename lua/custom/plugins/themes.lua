@@ -17,7 +17,7 @@ return {
         "dracula", "dracula-soft",
         -- "kanagawa", "kanagawa-wave", "kanagawa-dragon",
         "github_dark", "github_dark_dimmed",
-        "catppuccin", "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha",
+        -- "catppuccin", "catppuccin-frappe", "catppuccin-macchiato", "catppuccin-mocha",
       }
 
       math.randomseed(os.time())
