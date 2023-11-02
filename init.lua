@@ -29,9 +29,6 @@ require("lazy").setup({
   checker = { enabled = true }, -- automatically check for plugin updates
   -- NOTE: First, some plugins that don"t require any configuration
 
-  -- Git related plugins
-  -- "tpope/vim-fugitive",
-  -- "tpope/vim-rhubarb",
   --
   -- Detect tabstop and shiftwidth automatically
   "tpope/vim-sleuth",
@@ -489,6 +486,7 @@ cmp.setup({
   sources = {
     { name = "nvim_lsp" },
     { name = 'nvim_lsp_signature_help' },
+    { name = "codeium"},
     { name = "luasnip" },
     { name = "buffer" },
     { name = "path" },
@@ -500,6 +498,7 @@ cmp.setup({
       -- Source
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
+        codeium = "[Codeium]",
         luasnip = "[LuaSnip]",
         buffer = "[Buffer]",
         path = "[Path]",
@@ -560,6 +559,13 @@ cmp.setup({
       border = "single",
     },
   },
+})
+
+cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline(),
+    sources = {
+        { name = 'buffer' }
+    }
 })
 
 -- The line beneath this is called `modeline`. See `:help modeline`

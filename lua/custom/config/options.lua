@@ -44,8 +44,6 @@ vim.opt.winminwidth = 5 -- Minimum window width
 vim.opt.wrap = false -- Disable line wrap
 vim.opt.listchars = { space = "·", tab = "⇥ ", eol = "↵"}
 
--- Highlight more visualable
--- vim.cmd('highlight Visual guifg=NONE guibg=#6495ED')
 
 -- Change border of documentation hover window, See https://github.com/neovim/neovim/pull/13998.
 vim.lsp.handlers["textDocument/hover"] = vim.lsp.with(

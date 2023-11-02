@@ -47,5 +47,3 @@ Config neovim as PDE (Persnoal IDE)
 - [x] jk not map to esc
 - [x] project scope diagnostics
 
-
-

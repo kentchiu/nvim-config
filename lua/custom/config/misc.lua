@@ -30,16 +30,5 @@ vim.api.nvim_create_autocmd("InsertCharPre", {
   end,
 })
 
--- vim.api.nvim_create_autocmd("BufHidden", {
---   desc = "Delete [No Name] buffers",
---   callback = function(event)
---     print("enter no name buffer callback")
---     if event.file == "" and vim.bo[event.buf].buftype == "" and not vim.bo[event.buf].modified then
---       print("Delete No Name Buffer")
---       vim.schedule(function() pcall(vim.api.nvim_buf_delete, event.buf, {}) end)
---     end
---   end,
--- })
-
 
 -- vim: ts=2 sts=2 sw=2 et
